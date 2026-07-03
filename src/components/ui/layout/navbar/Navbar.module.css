@@ -9,9 +9,46 @@
 }
 
 .container {
-  margin: 1.5rem 1rem;
+  margin: 0.9rem 1.5rem;
   width: 1240px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+
+.container ul li {
+  margin: 0 8px;
+}
+
+.open {
+  right: -20;
+}
+.close {
+  right: -200;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (width <= 720px) {
+  .container ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    gap: 15px;
+    top: 58px;
+    width: 180px;
+    background: var(--color-black-900);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }

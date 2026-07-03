@@ -20,7 +20,11 @@
   --font-size-s: 0.6875rem;
   --font-size-ss: 0.5rem;
 
+  --text-heading: var(--font-monteserrat);
+  --text-body: var(--font-confortana);
   --font-height-l: 22px;
+
+  --shadow-button: 0 4px 0 var(--orange-400);
 
   --radius: 16px;
 }
@@ -54,14 +58,10 @@ body {
   @apply flex items-center justify-center;
 }
 
-.btn {
-  @apply bg-brown text-body font-bold py-2 px-4 cursor-pointer transition-colors inline-block;
+.maxwidth {
+  @apply mx-auto  max-w-[1240px];
 }
 
-.btn-secondary {
-  @apply bg-primary text-black-900 rounded-md border border-orange-200 shadow-button;
-}
-
-.btn:hover {
-  @apply text-white scale-105;
+.pixelated {
+  image-rendering: pixelated;
 }
