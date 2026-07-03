@@ -1,0 +1,17 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  background: var(--background);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin: 1.5rem 1rem;
+  width: 1240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
