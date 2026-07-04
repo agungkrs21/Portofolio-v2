@@ -58,10 +58,10 @@ function Detail({ path, detail }: DetailProps) {
       <Image
         src={`${path}`}
         alt="icon"
-        width={18}
-        height={18}
+        width={20}
+        height={20}
         style={{ imageRendering: 'pixelated' }}
-        // className="rendering-pixelated w-full h-auto"
+        className="rendering-pixelated w-auto h-[20px]"
       />
       <span>{detail}</span>
     </div>
