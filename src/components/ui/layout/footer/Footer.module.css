@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.container img {
+  width: auto;
+  height: 120px;
+  image-rendering: pixelated;
+}
+
+.container p {
+  text-align: center;
+  font-size: var(--font-size-s);
+  font-weight: 700;
+  max-width: 540px;
+}

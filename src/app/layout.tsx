@@ -5,6 +5,7 @@ import './globals.css';
 import { montserrat, comfortana } from '@/lib/fonts';
 // layout
 import NavBar from '@/components/ui/layout/navbar/Navbar';
+import Footer from '@/components/ui/layout/footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
