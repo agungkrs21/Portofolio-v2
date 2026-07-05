@@ -6,11 +6,13 @@ export const contact = {
       name: 'Email',
       term: 'Email is my preferred way to communicate.',
       icon: '/icon/email.png',
+      url: 'mailto:47ungkrs@gmail.com',
     },
     {
       name: 'Linked In',
       term: 'You can also reach me on LinkedIn.',
-      icon: '/icon/linkedin.png',
+      icon: '/icon/linked-in.png',
+      url: 'https://www.linkedin.com/in/agung-kurniawan-003954205',
     },
   ],
 };
