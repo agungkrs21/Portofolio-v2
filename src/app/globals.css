@@ -6,7 +6,7 @@
   --primary: #f4721e;
   --secondary: #5fb6c7;
 
-  --white-200: #e6e6e5;
+  --white-200: #b6b6b4;
   --white-100: #f0f0f0;
   --black-400: #1d1b1d;
   --black-900: #141214;
@@ -27,6 +27,24 @@
   --shadow-button: 0 4px 0 var(--orange-400);
 
   --radius: 16px;
+
+  /* other colors */
+  --blue: #428ef1;
+  --blue-bg: #0c2143;
+  --green: #7dcd3f;
+  --green-bg: #1e3c1b;
+  --purple: #a36ff3;
+  --purple-bg: #2d1f5a;
+  --yellow: #fcd041;
+  --yellow-bg: #48350d;
+  --red: #f4493e;
+  --red-bg: #4f1214;
+  --cyan: #4fd1e1;
+  --cyan-bg: #0f3b44;
+  --pink: #f260a5;
+  --pink-bg: #43162d;
+  --gray: #c4cbd4;
+  --gray-bg: #293039;
 }
 
 body {

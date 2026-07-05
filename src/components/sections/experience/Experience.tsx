@@ -6,7 +6,7 @@ const techCategory = techstacks.map((l) => l.category);
 
 export default function Experince() {
   return (
-    <section>
+    <section id="experience" className={`${styles.experience}`}>
       <div className={`maxwidth ${styles.container}`}>
         <p>{profile.about}</p>
         <p>Some technologies I&apos;ve worked with:</p>
@@ -24,17 +24,15 @@ export default function Experince() {
           <ul>
             {techstacks.map((t) => (
               <li key={t.category}>
-                <dl className={styles.item}>
-                  <dt>
-                    <h6>{t.category}</h6>
-                    {t.summary}
-                  </dt>
+                <section className={styles.item}>
+                  <h6>{t.category}</h6>
+                  <p> {t.summary}</p>
                   <div className={styles.items}>
                     {t.tech.map((i) => (
                       <Item key={i.name} icon={i.icon} name={i.name} />
                     ))}
                   </div>
-                </dl>
+                </section>
               </li>
             ))}
           </ul>
@@ -55,14 +53,14 @@ function Category({ category }: { category: string }) {
         style={{ imageRendering: 'pixelated' }}
         className={`rendering-pixelated ${styles.cticon}`}
       />
-      <h6>{category}</h6>
+      <p>{category}</p>
     </li>
   );
 }
 
 function Item({ icon, name }: { icon: string; name: string }) {
   return (
-    <dd className={`${styles.itembox}`}>
+    <div className={`${styles.itembox}`}>
       <img
         src={icon}
         alt={`Sprite ${name}`}
@@ -72,6 +70,6 @@ function Item({ icon, name }: { icon: string; name: string }) {
         className={`rendering-pixelated h-[50px] w-auto ${styles.gray}`}
       />
       {name}
-    </dd>
+    </div>
   );
 }

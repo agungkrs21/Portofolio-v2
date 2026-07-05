@@ -1,3 +1,7 @@
+.experience {
+  padding-bottom: 5rem;
+}
+
 .container {
   margin-top: 5rem;
   border: 1px solid var(--color-black-400);
@@ -14,7 +18,7 @@
   margin: 2rem auto 0 auto;
 }
 
-.container p:nth-child(2) {
+.container > p:nth-of-type(2) {
   color: var(--color-primary);
   font-weight: 700;
 }
@@ -53,16 +57,21 @@
   align-items: center;
 }
 
-.item dt {
+.item h6 {
   font-size: var(--font-size-m);
-  padding: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
   margin-top: 10px;
   width: 100%;
   text-align: left;
 }
-.item dt h6 {
-  font-weight: 700;
-  color: var(--color-white);
+.item p {
+  color: var(--foreground);
+  text-align: left;
+  width: 100%;
+  padding-left: 1rem;
+  font-size: var(--font-size-m);
 }
 
 .items {
