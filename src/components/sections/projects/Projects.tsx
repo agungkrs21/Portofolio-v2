@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './Projects.module.css';
 import { projects } from '@/data/projects';
+import RecentCommits from '@/components/recent-commits/RecentCommits';
 
 export default function Projects() {
   return (
@@ -13,7 +14,10 @@ export default function Projects() {
 
         {/* project left */}
         <div className={`${styles.gridColRow1} ${styles.gridL} `}>
-          <Featured />
+          <div className={`${styles.wrapper}`}>
+            <Featured />
+            <RecentCommits />
+          </div>
         </div>
 
         {/* project right */}
@@ -21,6 +25,7 @@ export default function Projects() {
           {projects.featured.map((project, i) => (
             <Project key={i} item={project} />
           ))}
+          <div className={`${styles.filler}`}></div>
         </div>
       </div>
     </section>
@@ -35,6 +40,7 @@ type Tags = {
 type Item = {
   title: string;
   url: string;
+  gitLink: string;
   image: string;
   term: string;
   keyFeatures: string[];
@@ -47,7 +53,7 @@ type Props = {
 
 function Featured() {
   return (
-    <div className={`${styles.wrapper}`}>
+    <section id="featured" className={`${styles.featured}`}>
       <h1>Featured Projects</h1>
       <p>{projects.summary}</p>
 
@@ -63,41 +69,67 @@ function Featured() {
       </ul>
 
       <div className={`${styles.imgPlaceHolder}`}></div>
-
-      {/* recent commit box */}
-      <section id="recent_commits" className={`${styles.commitbox}`}>
-        <h3>Recent Commits</h3>
-        <ol>
-          <li>
-            <article>
-              <h4>
-                <a href="#">Improve navbar acessibility</a>
-              </h4>
-              <p>Add aria labels and keyboard navigation</p>
-              <footer>
-                <time dateTime="2026-07-05T13:24:00Z">Jul 5, 2026</time>
-              </footer>
-            </article>
-          </li>
-        </ol>
-      </section>
-    </div>
+    </section>
   );
 }
 
 function Project({ item }: Props) {
   return (
-    <section className={`${styles.pbox} ${styles.card} `}>
-      <Image
-        src={item.image}
-        alt={`Project ${item.title}`}
-        width={1597}
-        height={910}
-        className={`${styles.pimage}`}
-      />
-      <h2>{item.title}</h2>
+    <section id="showcase" className={`${styles.pbox} ${styles.card}`}>
+      <h2>
+        {item.url ? (
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
+            {item.title}
+            <Image
+              src="/icon/chain-link.png"
+              alt="website link"
+              width={30}
+              height={30}
+              className={`${styles.pIurl}`}
+            />
+          </a>
+        ) : (
+          <>{item.title}</>
+        )}
+      </h2>
+      {item.gitLink && (
+        <a
+          href={item.gitLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.pLicon}`}
+        >
+          <Image
+            src="/icon/git-commit.png"
+            alt="Github link"
+            width={22}
+            height={21}
+            className={`${styles.pIgit}`}
+          />
+        </a>
+      )}
       <p>{item.term}</p>
-      <span className={`${styles.pmore}`}>show more</span>
+
+      <div>
+        <details className={`${styles.pdetails} `}>
+          <summary className={`${styles.pmore}`}> show more</summary>
+          <Image
+            src={item.image}
+            alt={`Project ${item.title}`}
+            width={1597}
+            height={910}
+            className={`${styles.pimage}`}
+          />
+          <ul>
+            {item.keyFeatures.map((feature) => (
+              <li key={feature}>
+                <p>{feature}</p>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </div>
+
       <div className={`${styles.tags}`}>
         {item.tags.map((tag) => (
           <span

@@ -1,0 +1,47 @@
+[
+  {
+    "repo": "Portofolio-v2",
+    "message": "add project card css scroll driven animation",
+    "date": "2026-07-06T04:34:47Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/baacbe5fd2b0d0a5bb2c34b274b2b09506e94a7b",
+    "additions": 127,
+    "deletions": 81,
+    "filesChanged": 5
+  },
+  {
+    "repo": "Portofolio-v2",
+    "message": "add toast notification",
+    "date": "2026-07-05T15:59:12Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/8264ed8e36e5673b6e1403794d6d89cfc1702960",
+    "additions": 462,
+    "deletions": 2,
+    "filesChanged": 22
+  },
+  {
+    "repo": "Portofolio-v2",
+    "message": "add projects section",
+    "date": "2026-07-05T02:40:13Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/0e9a7af1f5d8242f5aeccaeb8217fb30514b48b8",
+    "additions": 381,
+    "deletions": 18,
+    "filesChanged": 10
+  },
+  {
+    "repo": "Portofolio-v2",
+    "message": "add experience section",
+    "date": "2026-07-04T14:02:41Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/0041c92c743ebec1664ee996ff1f0d90570f4ca9",
+    "additions": 259,
+    "deletions": 6,
+    "filesChanged": 32
+  },
+  {
+    "repo": "Portofolio-v2",
+    "message": "add profile section",
+    "date": "2026-07-03T22:48:35Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/8cd6a89f631b4dc37d405018879bc78e1833cc82",
+    "additions": 301,
+    "deletions": 22,
+    "filesChanged": 16
+  }
+]

@@ -19,7 +19,6 @@
   justify-content: center;
   background: var(--color-black-900);
   border-radius: 16px;
-  /* border: 1px solid var(--color-black-400); */
 }
 
 .gridColRow1 {
@@ -47,38 +46,15 @@
   border: 1px solid var(--color-black-400);
 }
 
-.wrapper h1 {
+.featured > :not(:first-child) {
+  margin-top: 1.2rem;
+}
+
+.featured h1 {
   font-family: var(--text-heading);
   font-weight: 700;
   font-size: var(--font-size-l);
   color: var(--color-white);
-}
-
-.commitbox {
-  background: var(--color-black-900);
-  padding: 1rem;
-  border-radius: 16px;
-}
-
-.commitbox h3 {
-  position: relative;
-  margin-left: 25px;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.commitbox h3::before {
-  content: '';
-  background: url('/icon/git-commit.png');
-  position: absolute;
-  left: -25px;
-  top: 0;
-  width: 20px;
-  height: 20px;
-}
-
-.commitbox ol {
-  font-size: var(--font-size-m);
 }
 
 .term {
@@ -118,25 +94,68 @@
 }
 
 /* right box */
+.filler {
+  height: 600px;
+}
 
-.pbox {
+.sticky {
   position: sticky;
   top: 5rem;
+  z-index: 1;
+}
+
+.pbox {
+  position: relative;
   background: var(--background);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
   padding: 2rem;
+  gap: 1.2rem;
   border: 1px solid var(--color-black-400);
   border-radius: 16px;
-  /* opacity: 0.5; */
-  /* cursor: pointer; */
   transition: all 0.3s ease-in-out;
 }
 
 .pbox h2 {
-  color: var(--white-200);
+  position: relative;
+  width: fit-content;
   font-weight: 700;
+  color: var(--white-200);
+}
+
+.pbox h2 a {
+  cursor: pointer;
+}
+
+.pbox h2 a:hover {
+  color: var(--color-primary);
+}
+
+.pLicon {
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  width: 22px;
+  height: 21px;
+}
+
+.pIgit {
+  position: absolute;
+  image-rendering: pixelated;
+  width: auto;
+  height: 21px;
+}
+.pIgit:hover {
+  scale: 1.2;
+}
+
+.pIurl {
+  position: absolute;
+  image-rendering: pixelated;
+  top: 0.3rem;
+  right: -1.8rem;
+  width: 15px;
+  height: 15px;
 }
 
 .pmore {
@@ -154,7 +173,20 @@
   color: var(--white-100);
 }
 
+.pdetails ul {
+  padding: 1rem;
+  list-style-type: disc;
+}
+.pdetails ul li {
+  font-size: var(--font-size-m);
+}
+
+.pdetails ul li:not(:first-child) {
+  margin-top: 1em;
+}
+
 .pimage {
+  margin-top: 1rem;
   border-radius: 16px;
   width: 100%;
   height: auto;
@@ -162,6 +194,8 @@
 .tags {
   display: flex;
   gap: 5px;
+  position: sticky;
+  top: 5rem;
 }
 
 .tag {
@@ -190,5 +224,21 @@
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
+  }
+}
+
+@media (width <= 820px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 16px;
+  }
+  .gridR {
+    margin-left: 0;
+    width: 100%;
+  }
+  .gridL {
+    width: 100%;
   }
 }

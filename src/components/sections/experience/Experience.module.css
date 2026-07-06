@@ -108,10 +108,16 @@
 }
 
 @media (width <= 720px) {
+  .container p:first-of-type {
+    padding: 0 16px;
+  }
   .categoriebox {
     overflow-x: auto;
   }
   .category {
     min-width: 200px;
+  }
+  .categorydetail {
+    padding: 16px;
   }
 }
