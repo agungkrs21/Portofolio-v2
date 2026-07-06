@@ -1,8 +1,10 @@
+import RecentCommitsSkeleaton from '@/components/recent-commits/RecentCommitsSkelaton';
 import styles from './RecentCommits.module.css';
 
 export default function RecentCommits() {
   return (
     <section id="recent_commits" className={`${styles.container}`}>
+      <RecentCommitsSkeleaton />
       <h3>Recent Commits</h3>
       <div className={`${styles.commitbox}`}>
         <ol>
