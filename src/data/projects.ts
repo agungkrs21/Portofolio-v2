@@ -36,7 +36,7 @@ export const projects = {
       url: 'https://lowonganku.vercel.app/',
       image: '/images/projects/jobhunting.png',
 
-      term: 'An interactive job management platform designed to help users organize job opportunities with an intuitive drag-and-drop interface, making it easier to track applications and manage the hiring process.',
+      term: 'An interactive job management platform designed to help users organize job opportunities with an intuitive drag-and-drop interface.',
       keyFeatures: [
         'Interactive Drag & Drop — Organize job listings effortlessly with a smooth, responsive drag-and-drop experience.',
         'Optimized Core Web Vitals — Minimized layout shifts by rendering skeleton placeholders that preserve component dimensions while content is loading.',
@@ -57,7 +57,7 @@ export const projects = {
       url: 'https://web-animations-agungkrs.netlify.app/',
       image: '/images/projects/web-animations.png',
 
-      term: "An educational platform that teaches the fundamentals of web animations through interactive visualizations, practical examples, and a built-in playground. Whether you're learning the basics or experimenting with new techniques, every concept is accompanied by real-world implementations that you can explore and modify in real time.",
+      term: 'An educational platform that teaches the fundamentals of web animations through interactive visualizations, practical examples, and a built-in playground.',
       keyFeatures: [
         'Animation Fundamentals — Covers the core principles behind modern web animations, providing the foundation needed to understand and build a wide variety of animation techniques.',
         'Interactive Visualizations — Explains animation concepts with clear visual demonstrations, making complex ideas easier to understand.',

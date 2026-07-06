@@ -1,5 +1,5 @@
 .imgPlaceHolder {
-  width: 450px;
+  width: 100%;
   height: 300px;
   background: grey;
   border-radius: 16px;
@@ -13,26 +13,38 @@
 }
 
 .container {
-  position: sticky;
   top: 8rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   justify-content: center;
   background: var(--color-black-900);
   border-radius: 16px;
-  border: 1px solid var(--color-black-400);
-  gap: 10px;
+  /* border: 1px solid var(--color-black-400); */
+}
+
+.gridColRow1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.gridR {
+  margin-left: auto;
+  width: 50%;
+}
+.gridL {
+  width: 50%;
 }
 
 .wrapper {
+  position: sticky;
+  top: 5rem;
   background: var(--background);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-}
-.featured {
   padding: 2rem;
+  border: 1px solid var(--color-black-400);
 }
 
 .wrapper h1 {
@@ -77,31 +89,39 @@
 
 .description {
   color: var(--text-secondary);
-  /* font-size: var(--font-size-m); */
   margin-bottom: 1.2rem;
+}
+
+/* gradient bottom */
+.absBox {
+  pointer-events: none;
+  position: relative;
+}
+
+.gradientBox {
+  position: sticky;
+  top: 5rem;
+  height: 880px;
+  border-radius: 16px;
+  width: 100%;
+  background: var(--color-black-400);
+}
+
+.gradientCover {
+  position: absolute;
+  right: 0;
+  top: 60vh;
+  background: linear-gradient(to top, var(--color-black-900), transparent);
+  width: 50%;
+  height: 420px;
+  z-index: 1;
 }
 
 /* right box */
 
-.pshowcase {
-  position: relative;
-}
-.gradientCover {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to top,
-    var(--color-black-900) 0%,
-    transparent 100%
-  );
-  z-index: 1;
-}
-
 .pbox {
   position: sticky;
-  top: 0;
+  top: 5rem;
   background: var(--background);
   display: flex;
   flex-direction: column;
@@ -110,20 +130,8 @@
   border: 1px solid var(--color-black-400);
   border-radius: 16px;
   /* opacity: 0.5; */
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 0.3s ease-in-out;
-}
-
-.gradientCover:hover {
-  background: transparent;
-}
-
-.gradientCover:hover ~ .pbox {
-  opacity: 1;
-}
-
-.pbox:hover {
-  opacity: 1;
 }
 
 .pbox h2 {
@@ -133,15 +141,17 @@
 
 .pmore {
   font-size: var(--font-size-m);
-  color: var(--red);
+  color: var(--white-200);
   width: fit-content;
-  padding: 0.2rem 0.5rem;
   border-radius: 3px;
-  transition: background 0.2s ease-in;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in;
 }
 
 .pmore:hover {
-  background: var(--red-bg);
+  background: var(--color-black-400);
+  color: var(--white-100);
 }
 
 .pimage {
@@ -158,4 +168,27 @@
   padding: 0.3rem 0.5rem;
   font-size: var(--font-size-s);
   font-weight: 700;
+}
+
+/* css srcoll driven animation */
+@supports (animation-timeline: view()) {
+  .card {
+    animation: reveal;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
