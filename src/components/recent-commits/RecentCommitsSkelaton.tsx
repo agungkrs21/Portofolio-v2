@@ -1,18 +1,21 @@
 import styles from './RecentCommitsSkelaton.module.css';
 export default function RecentCommitsSkeleaton() {
   return (
-    <div className={`${styles.rctcommitSkt}`}>
-      <ol>
-        <li>
-          <div className={`${styles.flexDummy}`}>
+    <div className={`${styles.container}`}>
+      <h3>Recent Commits</h3>
+      <div className={`${styles.rctcommitSkt}`}>
+        <ol>
+          <li>
+            <div className={`${styles.flexDummy}`}>
+              <div className={`${styles.textDummy}`}></div>
+              <div className={`${styles.textDummy}`}></div>
+            </div>
             <div className={`${styles.textDummy}`}></div>
             <div className={`${styles.textDummy}`}></div>
-          </div>
-          <div className={`${styles.textDummy}`}></div>
-          <div className={`${styles.textDummy}`}></div>
-          <div className={`${styles.textDummy}`}></div>
-        </li>
-      </ol>
+            <div className={`${styles.textDummy}`}></div>
+          </li>
+        </ol>
+      </div>
     </div>
   );
 }

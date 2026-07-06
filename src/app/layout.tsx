@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 //font
-import { montserrat, comfortana } from '@/lib/fonts';
+import { montserrat, comfortana } from '@/lib/fonts/fonts';
 // layout
 import NavBar from '@/components/ui/layout/navbar/Navbar';
 import Footer from '@/components/ui/layout/footer/Footer';

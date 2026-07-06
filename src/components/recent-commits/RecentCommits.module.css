@@ -44,6 +44,10 @@
 .commit h4 {
   font-weight: 700;
   color: var(--color-white-200);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 51px);
 }
 .commit p {
   position: relative;

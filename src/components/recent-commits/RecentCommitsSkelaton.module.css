@@ -1,3 +1,21 @@
+.container h3 {
+  position: relative;
+  margin-left: 25px;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.container h3::before {
+  content: '';
+  background: url('/icon/git-commit.png');
+  position: absolute;
+  left: -25px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+}
+
 .rctcommitSkt {
   background: var(--color-black-900);
   padding: 0.8rem;
