@@ -2,6 +2,8 @@ import Image from 'next/image';
 import styles from './Projects.module.css';
 import { projects } from '@/data/projects';
 import RecentCommits from '@/components/recent-commits/RecentCommits';
+import { Suspense } from 'react';
+import RecentCommitsSkeleaton from '@/components/recent-commits/RecentCommitsSkelaton';
 
 export default function Projects() {
   return (
@@ -16,7 +18,9 @@ export default function Projects() {
         <div className={`${styles.gridColRow1} ${styles.gridL} `}>
           <div className={`${styles.wrapper}`}>
             <Featured />
-            <RecentCommits />
+            <Suspense fallback={<RecentCommitsSkeleaton />}>
+              <RecentCommits />
+            </Suspense>
           </div>
         </div>
 
