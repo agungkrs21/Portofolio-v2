@@ -1,29 +1,25 @@
 import Image from 'next/image';
 import styles from './About.module.css';
 import { profile } from '@/data/profile';
+import Link from 'next/link';
+import { DialogBox } from '@/components/client/dialog-box/DialogBox';
 
 export default function About() {
   return (
     <section className={`${styles.about}`} id="about">
-      <div className={`maxwidth ${styles.wrapper}`}>
+      <div className={`maxwidth firstPage ${styles.wrapper}`}>
         <div className={`${styles.box}`}>
           <h1>Hi, I&apos;M</h1>
           <p>
             <span>{profile.name}</span>, {profile.heroDescription}
           </p>
 
+          <Link href="/about">
+            <p className={`${styles.abMore}`}>More about me</p>
+          </Link>
+
           {/* dialog box */}
-          <div className={styles.dialogBox}>
-            <img
-              src="/images/me.png"
-              alt="Pixel Art Sprite"
-              width={166}
-              height={205}
-              style={{ imageRendering: 'pixelated' }}
-              className="rendering-pixelated w-[120px] h-[120px]"
-            />
-            {profile.goal}
-          </div>
+          <DialogBox dialog={profile.goal} />
         </div>
         {/* profile pic box */}
         <div className={`${styles.box}`}>

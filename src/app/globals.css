@@ -128,3 +128,7 @@ body {
 .pixelated {
   image-rendering: pixelated;
 }
+
+.firstPage {
+  padding-top: 9rem;
+}
