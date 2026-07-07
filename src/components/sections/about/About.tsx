@@ -4,7 +4,7 @@ import { profile } from '@/data/profile';
 
 export default function About() {
   return (
-    <section className={`${styles.about}`}>
+    <section className={`${styles.about}`} id="about">
       <div className={`maxwidth ${styles.wrapper}`}>
         <div className={`${styles.box}`}>
           <h1>Hi, I&apos;M</h1>

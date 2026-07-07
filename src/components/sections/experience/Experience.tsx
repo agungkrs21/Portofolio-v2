@@ -1,8 +1,9 @@
-import { techstacks } from '@/data/techstack';
 import { profile } from '@/data/profile';
-import Image from 'next/image';
 import styles from './Experience.module.css';
-const techCategory = techstacks.map((l) => l.category);
+import { TechCategory } from '@/components/client/tech-category/TechCategory';
+import { techstacks } from '@/data/techstack';
+
+
 
 export default function Experince() {
   return (
@@ -11,65 +12,8 @@ export default function Experince() {
         <p>{profile.about}</p>
         <p>Some technologies I&apos;ve worked with:</p>
 
-        {/* categories */}
-        <ul className={`${styles.categoriebox}`}>
-          <Category category="all" />
-          {techCategory.map((name) => (
-            <Category key={name} category={name} />
-          ))}
-        </ul>
-
-        {/* category item */}
-        <div className={`${styles.categorydetail}`}>
-          <ul>
-            {techstacks.map((t) => (
-              <li key={t.category}>
-                <section className={styles.item}>
-                  <h6>{t.category}</h6>
-                  <p> {t.summary}</p>
-                  <div className={styles.items}>
-                    {t.tech.map((i) => (
-                      <Item key={i.name} icon={i.icon} name={i.name} />
-                    ))}
-                  </div>
-                </section>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <TechCategory techstacks={techstacks}  />
       </div>
     </section>
-  );
-}
-
-function Category({ category }: { category: string }) {
-  return (
-    <li className={`${styles.category}`}>
-      <Image
-        src={`/icon/${category.toLowerCase()}.png`}
-        alt="Sprite Icon"
-        width={40}
-        height={40}
-        style={{ imageRendering: 'pixelated' }}
-        className={`rendering-pixelated ${styles.cticon}`}
-      />
-      <p>{category}</p>
-    </li>
-  );
-}
-
-function Item({ icon, name }: { icon: string; name: string }) {
-  return (
-    <div className={`${styles.itembox}`}>
-      <img
-        src={icon}
-        alt={`Sprite ${name}`}
-        width={0}
-        height={0}
-        style={{ imageRendering: 'pixelated' }}
-        className={`rendering-pixelated h-[50px] w-auto ${styles.gray}`}
-      />
-      {name}
-    </div>
   );
 }

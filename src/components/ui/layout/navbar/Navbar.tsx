@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button/Button';
 import { useState, useRef, useEffect } from 'react';
 
 // readonly type
-const links = ['about', 'project', 'contact'] as const;
+const links = ['about', 'projects', 'contact'] as const;
 
 export default function NavBar() {
   const menuRef = useRef<HTMLDivElement>(null);
