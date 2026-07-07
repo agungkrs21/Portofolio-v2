@@ -1,14 +1,14 @@
 export const projects = {
   summary:
-    "I'm currently building a portfolio mini-game that transforms a traditional portfolio into an interactive experience. Once completed, it will serve two purposes:",
+    "I'm currently building an interactive portfolio mini-game with two goals. Once it's finished, I'll integrate it into this website:",
   pourpose: [
     {
       title: 'For Recruiters & Visitors',
-      body: 'A memorable and engaging way to explore my skills, projects, and experience through gameplay instead of static pages.',
+      body: 'Create a memorable and interactive way to explore my work.',
     },
     {
       title: 'For Myself',
-      body: 'A long-term playground for experimenting with new ideas, refining my frontend architecture, and continuously improving my skills in system design, performance, and accessibility.',
+      body: 'Continue growing as a developer by combining web development, game development, and design into a single project.',
     },
   ],
   featured: [
