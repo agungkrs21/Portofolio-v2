@@ -56,7 +56,7 @@ function Categories({ categories, techstacks }: CategoriesProps) {
       <ul className={`${styles.categories}`}>
         <li>
           <button
-            className={`${fitler === 'all' ? styles.ctButtonActive : styles.ctButtonDeactive}`}
+            className={`${fitler === 'All' ? styles.ctButtonActive : styles.ctButtonDeactive}`}
             onClick={() => handlerFilter('All')}
           >
             <Image

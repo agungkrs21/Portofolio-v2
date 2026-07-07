@@ -17,25 +17,28 @@ export default function About() {
             <img
               src="/images/me.png"
               alt="Pixel Art Sprite"
-              width={120}
-              height={120}
+              width={166}
+              height={205}
               style={{ imageRendering: 'pixelated' }}
               className="rendering-pixelated w-[120px] h-[120px]"
             />
             {profile.goal}
           </div>
         </div>
+        {/* profile pic box */}
         <div className={`${styles.box}`}>
           <div>
             <img
-              src="/images/me-big.png"
+              src="/images/me-pp.png"
               alt="Pixel Art Sprite"
-              width={350}
-              height={350}
+              width={520}
+              height={520}
               style={{ imageRendering: 'pixelated' }}
-              className="max-w-full h-auto rendering-pixelated"
+              className={`${styles.imgBig}`}
             />
           </div>
+          <div className={`${styles.wave}`}></div>
+          <div className={`${styles.wave}`}></div>
         </div>
         <div className={`${styles.box}`}>
           {profile.details.map((detail) => (
@@ -58,8 +61,8 @@ function Detail({ path, detail }: DetailProps) {
       <Image
         src={`${path}`}
         alt="icon"
-        width={20}
-        height={20}
+        width={21}
+        height={21}
         style={{ imageRendering: 'pixelated' }}
         className="rendering-pixelated w-auto h-[20px]"
       />

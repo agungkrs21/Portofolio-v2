@@ -8,7 +8,8 @@
 }
 
 .projects {
-  background: var(--color-black-900);
+  background: var(--color-black-900) url('/pattern/checkboard-2.svg')
+    center/150px repeat;
   padding: 5rem 0;
 }
 

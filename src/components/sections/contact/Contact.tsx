@@ -10,12 +10,13 @@ export default function Contact() {
         <StayInTouch />
         {/* dialog box */}
         <div className={`${styles.dialogbox}`}>
-          <Image
+          <img
             src="/images/me-phone-o.png"
             alt="Pixel Art Sprite"
             width={186}
             height={238}
             style={{ imageRendering: 'pixelated' }}
+            className="rendering-pixlated w-auto h-[238px]"
           />
           <p>{contact.summary}</p>
         </div>
