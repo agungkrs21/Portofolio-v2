@@ -28,7 +28,7 @@ export default function NavBar() {
   return (
     <nav className={`${styles.navbar}`}>
       <div ref={menuRef} className={`${styles.container}`}>
-        <Link href="#">
+        <Link href="/">
           <Image
             src="/brand.svg"
             alt="logo"
