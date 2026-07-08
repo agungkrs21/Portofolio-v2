@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { Viewport } from 'next';
+import { personSchema, websiteSchema } from '@/lib/seo/structured-data';
 import { siteConfig } from '@/config/site';
 import './globals.css';
 
@@ -120,6 +121,13 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([websiteSchema, personSchema]),
+          }}
+        />
       </body>
     </html>
   );

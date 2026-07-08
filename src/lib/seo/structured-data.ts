@@ -110,19 +110,4 @@ export const profilePageSchema = {
   },
 };
 
-// <JsonLd
-//   data={[
-//     websiteSchema,
-//     personSchema,
-//     profilePageSchema,
-//   ]}
-// />
 
-// <JsonLd
-//   data={softwareSourceCodeSchema({
-//     name: project.title,
-//     description: project.summary,
-//     repo: project.github,
-//     url: project.demo,
-//   })}
-// />
