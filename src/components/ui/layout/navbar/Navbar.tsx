@@ -45,7 +45,7 @@ export default function NavBar() {
         >
           {links.map((link) => (
             <li key={link}>
-              <Button href={`#${link}`}>{link.toUpperCase()}</Button>
+              <Button href={`/#${link}`}>{link.toUpperCase()}</Button>
             </li>
           ))}
           <li>
