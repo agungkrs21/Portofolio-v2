@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { lifeStory } from '@/data/profile';
 import styles from './Page.module.css';
 import { timelines } from '@/data/profile';
+import { parseText } from '@/utils/parseText';
 
 export default function About() {
   return (
@@ -44,6 +45,8 @@ interface TimelineProps {
     time: string;
     title: string;
     summary: string;
+    links: { id: string; text: string; href: string }[];
+    picture: string;
   }[];
 }
 
@@ -66,7 +69,7 @@ function Timeline({ timelines }: TimelineProps) {
               <h3>{tl.title}</h3>
             </div>
             <div>
-              <p>{tl.summary}</p>
+              <p>{parseText({ text: tl.summary, links: tl.links })}</p>
             </div>
           </li>
         ))}

@@ -30,35 +30,83 @@ export const timelines = [
     time: 'Today',
     title: 'Fronend Developer',
     summary: 'Building interactive web applications.',
+    links: [],
+    picture: '/images/projects/portofoliov1.png',
   },
   {
     time: '2025',
     title: 'Landed My First Commissioned Project',
     summary:
-      "This was a significant milestone in my journey. While developing the Kalosi Health Center Information System, I graduated with a Bachelor's degree in Computer Science. During this period, I also earned two additional commissioned projects through recommendations from my university peers, allowing me to gain more real-world development experience.",
+      'This was a significant milestone in my journey. While developing the {{khci}}, I graduated with a {{tesis}}. During this period, I also earned two additional commissioned projects through recommendations from my university peers, allowing me to gain more real-world development experience.',
+    links: [
+      {
+        id: 'khci',
+        text: 'Kalosi Health Center Information System',
+        href: 'https://github.com/agungkrs21/web-kalosi-kesehatan',
+      },
+      {
+        id: 'tesis',
+        text: "Bachelor's degree in Computer Science",
+        href: 'https://www.researchgate.net/publication/393462888_Rancang_Bangun_Aplikasi_Framework_Pentest_Untuk_Linux_Debian',
+      },
+    ],
+    picture: '/images/projects/portofoliov1.png',
   },
   {
     time: '2024',
     title: 'IT Engineer (Contract)',
     summary:
-      'Recommended by a senior at my university to join a project team as a Contract IT Engineer, where I helped support a large-scale Linux operating system migration at Pegadaian.',
+      'Recommended by a senior at my university to join a project team as a Contract IT Engineer, where I helped support a large-scale Linux operating system migration at {{pegadaian}}.',
+    links: [
+      { id: 'pegadaian', text: 'Pegadaian', href: 'https://pegadaian.co.id/' },
+    ],
+    picture: '/images/projects/pegadaian-work.png',
   },
   {
     time: '2023',
     title: 'Build My First Website',
     summary:
-      'During this time, I explored several programming languages before eventually discovering JavaScript. I was drawn to its simplicity and ease of understanding, but what truly sparked my interest was the free book Eloquent JavaScript. Its clear explanations and engaging style made learning enjoyable, deepened my appreciation for programming, and inspired me to build my first website.',
+      'During this time, I explored several programming languages before eventually discovering JavaScript. I was drawn to its simplicity and ease of understanding, but what truly sparked my interest was the free book {{elobook}}. Its clear explanations and engaging style made learning enjoyable, deepened my appreciation for programming, and inspired me to build my first website.',
+    links: [
+      {
+        id: 'elobook',
+        text: 'Eloquent JavaScript',
+        href: 'https://eloquentjavascript.net/',
+      },
+    ],
+    picture: '/images/projects/first-web.png',
   },
   {
     time: '2018',
     title: 'Create A small comunity',
     summary:
-      'Founded a small community called Broinet in my hometown to introduce people to computer networking. Through this initiative, we also had the opportunity to design and set up local area networks (LANs) for several schools in the area.',
+      'Founded a small community called {{broinet}} in my hometown to introduce people to computer networking. Through this initiative, we also had the opportunity to design and {{lanwork}}',
+    links: [
+      {
+        id: 'broinet',
+        text: 'Broinet',
+        href: 'https://www.facebook.com/share/p/1H5FwoTgQF/',
+      },
+      {
+        id: 'lanwork',
+        text: 'set up local area networks (LANs) for several schools in the area',
+        href: 'https://makassar.tribunnews.com/2016/09/23/karena-guru-ini-smkn-2-belopa-dan-smkn-1-suli-terapkan-pembelajaran-berbasis-it',
+      },
+    ],
+    picture: '/images/projects/broinet.png',
   },
   {
     time: '2015',
     title: 'Computer & Network Engineering',
     summary:
-      'This is where it all began. I enrolled in a vocational high school and majored in Computer and Network Engineering.',
+      'This is where it all began. I enrolled in a {{smk6luwu}} and majored in Computer and Network Engineering.',
+    links: [
+      {
+        id: 'smk6luwu',
+        text: 'vocational high school',
+        href: 'https://www.uptsmkn6luwu.sch.id/',
+      },
+    ],
+    picture: '/images/projects/first-start.png',
   },
 ];
