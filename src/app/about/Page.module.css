@@ -1,0 +1,111 @@
+.about {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.catbg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  transform: rotate(-130deg) translateX(20%) translateY(40%);
+  background: url('/icon/toast-cat.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  transition: transform 1s cubic-bezier(1, 0, 1, 1);
+}
+.catbg:hover {
+  transform: rotate(-130deg) translateX(20%) translateY(20%);
+}
+
+.title {
+  font-weight: 700;
+  font-size: var(--font-size-l);
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  margin-bottom: 2rem;
+}
+
+.imageCt {
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePic {
+  align-self: baseline;
+  width: 320px;
+  height: auto;
+  border-radius: 16px;
+}
+
+.about div > p {
+  letter-spacing: 0.5px;
+  line-height: 1.6rem;
+}
+
+.about div > p:not(:first-of-type) {
+  margin-top: 1em;
+}
+
+.timelineCt {
+  padding: 2rem;
+}
+
+.timelineCt ol {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  grid-template-columns: 40% 60%;
+  gap: 1rem;
+}
+
+.timeline > div {
+  position: relative;
+}
+
+.timeline {
+  background: var(--color-black-900);
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+.timeline h3 {
+  font-weight: 700;
+  color: var(--color-white-200);
+}
+
+.timeline div time {
+  font-size: var(--font-size-sl);
+  color: var(--color-white-200);
+}
+
+.timeline div > p {
+  font-size: var(--font-size-m);
+  letter-spacing: 0.3px;
+  line-height: 1.3rem;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
