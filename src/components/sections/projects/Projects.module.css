@@ -114,16 +114,6 @@
   font-family: var(--text-heading);
   margin-bottom: 1.2rem;
 }
-.breakPoint h2::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -160px;
-  translate: 0 -50%;
-  width: 140px;
-  height: 1px;
-  background: var(--white-200);
-}
 
 .sticky {
   position: sticky;
@@ -220,8 +210,8 @@
 }
 .tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
-  position: sticky;
   top: 5rem;
 }
 

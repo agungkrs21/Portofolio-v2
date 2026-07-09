@@ -105,7 +105,7 @@ interface ItemsProps {
 function Items({ techs, animate }: ItemsProps) {
   return (
     <section className={`${styles.items}`}>
-      <h6>{techs.category}</h6>
+      <p>{techs.category}</p>
       <p>{techs.summary}</p>
       <ul>
         {techs.tech.map((t) => (

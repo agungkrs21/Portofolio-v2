@@ -2,7 +2,7 @@ import styles from './RecentCommitsSkelaton.module.css';
 export default function RecentCommitsSkeleaton() {
   return (
     <div className={`${styles.container}`}>
-      <h3>Recent Commits</h3>
+      <h2>Recent Commits</h2>
       <div className={`${styles.rctcommitSkt}`}>
         <ol>
           <li>

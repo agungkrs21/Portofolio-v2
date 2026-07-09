@@ -15,10 +15,11 @@ export default function Experince() {
       </div>
       <div className={` maxwidth ${styles.scriptCT}`}>
         <div>
-          <h3>TypeScript</h3>
+          <p>TypeScript</p>
           <p>
             I am proficient in TypeScript, whether I&apos;m working with React
-            or Node.js.
+            or Node.js, using it to build scalable, maintainable, and type-safe
+            applications.
           </p>
 
           <Image
@@ -31,7 +32,7 @@ export default function Experince() {
           />
         </div>
         <div>
-          <h3>Arch Linux</h3>
+          <p>Arch Linux</p>
           <p>
             Comfortable working in Linux environments, with Arch Linux as my
             primary operating system for daily development.

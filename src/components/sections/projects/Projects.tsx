@@ -95,11 +95,16 @@ function Project({ item }: Props) {
     <section id="showcase" className={`${styles.pbox} ${styles.card}`}>
       <h2>
         {item.url ? (
-          <a href={item.url} target="_blank" rel="noopener noreferrer">
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Project Website"
+          >
             {item.title}
             <Image
               src="/icon/chain-link.png"
-              alt="website link"
+              alt=""
               width={30}
               height={30}
               className={`${styles.pIurl}`}
@@ -115,10 +120,11 @@ function Project({ item }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.pLicon}`}
+          aria-label="View source code on GitHub"
         >
           <Image
             src="/icon/git-commit.png"
-            alt="Github link"
+            alt=""
             width={22}
             height={21}
             className={`${styles.pIgit}`}

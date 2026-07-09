@@ -21,14 +21,19 @@ export default async function RecentCommits() {
 function CommitList({ commits }: { commits: RecentCommit[] }) {
   return (
     <section id="recent_commits" className={`${styles.container}`}>
-      <h3>Recent Commits</h3>
+      <h2>Recent Commits</h2>
       <div className={`${styles.commitbox}`}>
         <ol>
           {commits.map((commit, i) => (
             <li key={`${i}-${commit.date}`}>
-              <a href={commit.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={commit.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View commit on GitHub"
+              >
                 <article className={`${styles.commit}`}>
-                  <h4>📝 {commit.message}</h4>
+                  <h3>📝 {commit.message}</h3>
                   <p>repo : {commit.repo}</p>
                   <p>files changed : {commit.filesChanged}</p>
                   <div>

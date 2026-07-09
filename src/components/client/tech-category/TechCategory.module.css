@@ -91,12 +91,12 @@
   padding: 1rem;
   position: relative;
 }
-.items > h6 {
+.items > p:first-of-type {
   font-weight: 700;
   text-align: left;
 }
 
-.items > p {
+.items > p:nth-child(2) {
   margin-top: 0.2rem;
   text-align: left;
 }

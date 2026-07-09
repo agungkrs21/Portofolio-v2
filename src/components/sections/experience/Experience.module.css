@@ -37,14 +37,16 @@
 .scriptCT > div {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
   justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
 }
 
-.scriptCT > div h3 {
+.scriptCT > div p:first-of-type {
+  align-self: baseline;
   font-weight: 700;
 }
-.scriptCT > div p {
+.scriptCT > div p:nth-child(2) {
   font-size: var(--font-size-m);
   margin-bottom: 1rem;
 }
