@@ -50,6 +50,7 @@ export const projects = {
         { name: 'hash', color: 'gray' },
         { name: 'jws', color: 'yellow' },
         { name: 'nextjs', color: 'gray' },
+        { name: 'react', color: 'cyan' },
         { name: 'mongodb', color: 'green' },
         { name: 'dnd-kit', color: 'purple' },
       ],
@@ -72,6 +73,72 @@ export const projects = {
         { name: 'css', color: 'gray' },
         { name: 'javascript', color: 'yellow' },
         { name: 'html5', color: 'red' },
+      ],
+    },
+  ],
+  commisionProjects: [
+    {
+      title: 'Kalosi Health Center Information System',
+      url: '',
+      gitLink: 'https://github.com/agungkrs21/web-kalosi-kesehatan',
+      image: '/images/projects/web-apkalosi.png',
+
+      term: 'A web-based healthcare management system developed for the Kalosi Health Center.',
+      keyFeatures: [
+        'Realtime Chat — Communicate with users via real-time messaging, featuring notifications across both mobile and web platforms.',
+        'Article Management — Create, edit, and publish health articles using the Quill Rich Text Editor, allowing healthcare staff to write formatted content with images, headings, lists, and other rich-text features.',
+        'User Management — Manage registered users, monitor user information, and maintain account data',
+        'Education Video Management — Upload, organize, update, and remove educational health videos that are accessible from the mobile application.',
+      ],
+      tags: [
+        { name: 'react', color: 'cyan' },
+        { name: 'expo', color: 'gray' },
+        { name: 'quill', color: 'yellow' },
+        { name: 'express', color: 'gray' },
+        { name: 'appwrite', color: 'red' },
+      ],
+    },
+    {
+      title: 'PT Nuansa Cipta Magello Distribution Management System',
+      url: '',
+      gitLink:
+        'https://github.com/agungkrs21/aplikasi-distribusi-makanan-kaleng',
+      image: '/images/projects/web-ptmagello.png',
+
+      term: 'A web-based distribution management system developed for PT Nuansa Cipta Magello to streamline the distribution of canned food products.',
+      keyFeatures: [
+        'Analytics Dashboard — Monitor key business metrics through an interactive dashboard and provides instant insights into warehouse operations.',
+        'Active Shipment Tracking — Track ongoing product deliveries in real time using geolocation and data provided by the delivery app.',
+        'Automated Report Generation — Generate comprehensive distribution reports with flexible filtering capabilities and multi-format export options (Excel/PDF).',
+        'Database Design — The application uses a relational database structure to maintain data consistency and support complex business workflows.',
+      ],
+      tags: [
+        { name: 'react', color: 'cyan' },
+        { name: 'neosql', color: 'green' },
+        { name: 'geolocation', color: 'gray' },
+        { name: 'sql', color: 'cyan' },
+      ],
+    },
+    {
+      title: 'PT Yusran Karya Nusantara AI Customer Service',
+      url: '',
+      gitLink: 'https://github.com/agungkrs21/chat-bot-pt-yusran',
+      image: '/images/projects/android-ptyusran.png',
+
+      term: 'An AI-powered Android customer service application developed for PT Yusran Karya Nusantara.',
+      keyFeatures: [
+        "AI Customer Assistant — Using OpenAI's LLM with Retrieval-Augmented Generation (RAG) to answer customer inquiries based on data retrieved from a vector database.",
+        'Real-time Chat — Built using Appwrite Realtime subscriptions for instant message delivery and synchronization across connected clients.',
+        'Server-Side Processing — Critical operations are handled by Appwrite Functions, enabling the client application to focus on rendering data and delivering a responsive user experience.',
+        "Database Design — Uses ChromaDB for the company's knowledge base and Appwrite Database for application data.",
+      ],
+      tags: [
+        { name: 'expo', color: 'gray' },
+        { name: 'openAi', color: 'green' },
+        { name: 'rag', color: 'cyan' },
+        { name: 'nlpm', color: 'purple' },
+        { name: 'chromaDb', color: 'pink' },
+        { name: 'appwrite', color: 'red' },
       ],
     },
   ],

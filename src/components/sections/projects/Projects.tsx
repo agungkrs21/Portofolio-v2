@@ -29,6 +29,19 @@ export default function Projects() {
           {projects.featured.map((project, i) => (
             <Project key={i} item={project} />
           ))}
+
+          <div className={`${styles.breakPoint}`}>
+            <h2>Commissioned Projects</h2>
+            <p>
+              A showcase of custom projects created to solve the unique
+              challenges and requirements of individual clients.
+            </p>
+          </div>
+
+          {projects.commisionProjects.map((project, i) => (
+            <Project key={i} item={project} />
+          ))}
+
           <div className={`${styles.filler}`}></div>
         </div>
       </div>

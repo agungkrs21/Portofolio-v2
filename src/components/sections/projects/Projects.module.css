@@ -18,7 +18,6 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   justify-content: center;
-  background: var(--color-black-900);
   border-radius: 16px;
 }
 
@@ -96,7 +95,34 @@
 
 /* right box */
 .filler {
+  pointer-events: none;
+  display: block;
   height: 600px;
+}
+
+.breakPoint {
+  margin: 2rem 0;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.breakPoint h2 {
+  position: relative;
+  width: fit-content;
+  color: var(--white-200);
+  font-weight: 700;
+  font-family: var(--text-heading);
+  margin-bottom: 1.2rem;
+}
+.breakPoint h2::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -160px;
+  translate: 0 -50%;
+  width: 140px;
+  height: 1px;
+  background: var(--white-200);
 }
 
 .sticky {
@@ -229,6 +255,10 @@
 }
 
 @media (width <= 820px) {
+  .filler {
+    display: hidden;
+    height: 0px;
+  }
   .container {
     display: flex;
     flex-direction: column;
