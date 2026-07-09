@@ -1,5 +1,6 @@
 'use client';
 
+import { LoadingSpinner } from '@/components/ui/loading-sprinner/LoadingSprinner';
 import styles from './Terminal.module.css';
 
 export function Terminal() {
@@ -40,7 +41,7 @@ function Categories() {
 function Items() {
   return (
     <div className={`${styles.items}`}>
-      <p>hello bruthoer</p>
+      <LoadingSpinner />
     </div>
   );
 }
