@@ -33,8 +33,8 @@ export default function Experince() {
         <div>
           <h3>Arch Linux</h3>
           <p>
-            I am proficient in TypeScript, whether I&apos;m working with React
-            or Node.js.
+            Comfortable working in Linux environments, with Arch Linux as my
+            primary operating system for daily development.
           </p>
 
           <Image
