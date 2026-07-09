@@ -80,6 +80,11 @@
   color: var(--background);
 }
 
+.categories .active {
+  background: var(--color-white-200);
+  color: var(--background);
+}
+
 .items {
   padding: 0.8rem 1rem 1rem 1rem;
   font-size: var(--font-size-m);

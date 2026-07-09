@@ -38,4 +38,4 @@ export const PANELS = {
       () => import('@/components/client/terminal/panels/theme/ThemePanel'),
     ),
   },
-};
+} as const;
