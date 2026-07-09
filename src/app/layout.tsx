@@ -9,7 +9,7 @@ import { montserrat, comfortana } from '@/lib/fonts/fonts';
 // layout
 import NavBar from '@/components/ui/layout/navbar/Navbar';
 import Footer from '@/components/ui/layout/footer/Footer';
-
+import UtilityDock from '@/components/ui/layout/utility-dock/UtilityDock';
 // SEO
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -119,7 +119,9 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${comfortana.variable}`}>
       <body>
         <NavBar />
+
         {children}
+        <UtilityDock />
         <Footer />
 
         <script
