@@ -1,7 +1,8 @@
 'use client';
 
-import { formatMetric, FormattedMetric } from '@/utils/formatMetric';
 import styles from './PerfomancePanel.module.css';
+import { LoadingBar } from '@/components/ui/loading-bar/LoadingBar';
+import { formatMetric, FormattedMetric } from '@/utils/formatMetric';
 import {
   useWebVitalsStore,
   MetricKey,
@@ -17,7 +18,11 @@ export default function PerfomancePanel() {
   return (
     <div className={`${styles.container}`}>
       <p>Real User Metrics</p>
+      <LoadingBar percent={metricsFormatted.length * 2} />
       <WebVitalsTable metrics={metricsFormatted} />
+      {metricsFormatted.length < 5 && (
+        <span>Continue using the application to collect more data.</span>
+      )}
     </div>
   );
 }
@@ -40,7 +45,6 @@ function WebVitalsTable({ metrics }: { metrics: FormattedMetric[] }) {
           </div>
         );
       })}
-      
     </div>
   );
 }

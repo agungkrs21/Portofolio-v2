@@ -19,19 +19,53 @@ const panelItems: Array<{
 
 export function Terminal() {
   const [activePanel, setActivePanel] = useState<PanelKey>('performance');
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  function handleOpenWindow(state: boolean) {
+    if (isActive === state) return;
+    setIsActive(state);
+  }
 
   function onCategoryChange(panel: PanelKey) {
     setActivePanel(panel);
   }
-
+  console.log('memew');
   return (
-    <div className={`${styles.container}`}>
-      <Categories
-        activePanel={activePanel}
-        categories={panelItems}
-        handleCLick={onCategoryChange}
-      />
-      <Items activePanel={activePanel} />
+    <div
+      aria-label="open terminal"
+      className={`${styles.container} `}
+      onClick={() => handleOpenWindow(true)}
+    >
+      <div
+        className={`${styles.wrapper}  ${isActive ? styles.wActive : styles.wDeactive}`}
+      >
+        <div
+          className={`${styles.topbar}`}
+          style={{ height: `${isActive ? '22px' : '8px'}` }}
+        >
+          <p
+            className={`${styles.wIcon}  ${isActive ? styles.iActive : styles.iDeactive}`}
+          >
+            {'>_'}
+          </p>
+        </div>
+        {isActive && (
+          <div className={`${styles.panelCt} ${isActive ? styles.fadeIn : ''}`}>
+            <button
+              aria-label="close terminal"
+              onClick={() => handleOpenWindow(false)}
+            >
+              ✖
+            </button>
+            <Categories
+              activePanel={activePanel}
+              categories={panelItems}
+              handleCLick={onCategoryChange}
+            />
+            <Items activePanel={activePanel} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
