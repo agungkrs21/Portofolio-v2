@@ -10,6 +10,8 @@ import { montserrat, comfortana } from '@/lib/fonts/fonts';
 import NavBar from '@/components/ui/layout/navbar/Navbar';
 import Footer from '@/components/ui/layout/footer/Footer';
 import UtilityDock from '@/components/ui/layout/utility-dock/UtilityDock';
+import { WebVitalsCollector } from '@/components/collectors';
+
 // SEO
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -116,8 +118,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${comfortana.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${montserrat.variable} ${comfortana.variable}`}
+    >
       <body>
+        <WebVitalsCollector />
+
         <NavBar />
 
         {children}
