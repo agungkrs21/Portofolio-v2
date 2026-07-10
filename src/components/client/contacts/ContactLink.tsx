@@ -92,7 +92,6 @@ export function ContactLink({ links, styles }: Props) {
 }
 
 function ToastContainer({ type, message }: { type: string; message: string }) {
-  console.log(type);
   return (
     <div className={styles.toastContainer}>
       <Image
