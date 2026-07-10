@@ -45,7 +45,6 @@
 
 .topbar .iDeactive {
   color: var(--color-white-200);
-
   translate: 85% 25%;
 }
 .topbar .iActive {
@@ -130,5 +129,23 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (width <720px) {
+  .wActive {
+    width: calc(100vw - 2rem);
+    height: 250px;
+  }
+  .wDeactive {
+    width: 44px;
+    height: 35px;
+  }
+
+  .topbar .iDeactive {
+    translate: 80% 35%;
+  }
+  .topbar .iActive {
+    translate: 75% 0%;
   }
 }

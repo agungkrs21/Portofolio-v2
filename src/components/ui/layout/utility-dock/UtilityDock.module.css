@@ -5,4 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 11;
+}
+
+@media (width <= 960px) {
+  .container {
+    bottom: 1rem;
+    left: 1rem;
+  }
 }
