@@ -1,0 +1,48 @@
+{
+  "about": {
+    "title": "Tentang Saya",
+    "life_story": [
+      "Halo! Saya Agung Kurniawan. Saya senang mengubah ide menjadi kenyataan—bukan karena saya seorang pesulap, melainkan karena saya seorang Front-End Developer. Membangun sesuatu adalah hal yang selalu memotivasi saya. Saya senang menantang diri sendiri, belajar dari setiap proyek, dan merasa bangga ketika berhasil menciptakan produk yang tidak hanya berfungsi dengan baik, tetapi juga nyaman dan menyenangkan untuk digunakan.",
+
+      "Saat ini, saya berfokus untuk terus berkembang sebagai web developer dengan membangun berbagai proyek pribadi yang mendorong saya mempelajari hal-hal baru. Saya menikmati proses mengembangkan aplikasi menggunakan teknologi web modern, sekaligus mengeksplorasi pengalaman interaktif dan desain yang kreatif.",
+
+      "Di luar waktu saya di depan komputer, biasanya saya menghabiskan waktu dengan bermain video game, mendengarkan musik, mengeksplorasi teknologi baru, atau bereksperimen dengan berbagai ide yang pada akhirnya berkembang menjadi proyek sampingan berikutnya."
+    ]
+  },
+  "time_lines": {
+    "title": "Perjalanan",
+    "sub_title": "Perjalanan singkat saya hingga menjadi seorang Front-End Developer",
+    "lines": [
+      {
+        "time": "Hari Ini",
+        "title": "Front-End Developer",
+        "summary": "Membangun aplikasi web yang interaktif."
+      },
+      {
+        "time": "2025",
+        "title": "Mendapatkan Proyek Komisi Pertama",
+        "summary": "Tahun ini menjadi salah satu pencapaian penting dalam perjalanan saya. Di tengah pengembangan {{khci}}, saya juga berhasil menyelesaikan studi dengan {{tesis}}. Pada periode yang sama, saya memperoleh dua proyek komisi tambahan melalui rekomendasi dari teman-teman di universitas, sehingga saya mendapatkan lebih banyak pengalaman dalam mengembangkan aplikasi untuk kebutuhan nyata."
+      },
+      {
+        "time": "2024",
+        "title": "IT Engineer (Kontrak)",
+        "summary": "Direkomendasikan oleh senior di universitas untuk bergabung sebagai IT Engineer kontrak dalam sebuah tim proyek, di mana saya turut membantu proses migrasi sistem operasi Linux berskala besar di {{pegadaian}}."
+      },
+      {
+        "time": "2023",
+        "title": "Membangun Website Pertama",
+        "summary": "Pada masa ini, saya mencoba mempelajari beberapa bahasa pemrograman sebelum akhirnya menemukan JavaScript. Saya tertarik karena sintaksnya sederhana dan mudah dipahami. Namun, yang benar-benar membuat saya semakin menyukai pemrograman adalah buku gratis {{elobook}}. Penjelasannya yang jelas dan gaya penyampaiannya yang menarik membuat proses belajar terasa menyenangkan, memperdalam ketertarikan saya terhadap dunia pemrograman, sekaligus menginspirasi saya untuk membangun website pertama."
+      },
+      {
+        "time": "2018",
+        "title": "Membentuk Komunitas Kecil",
+        "summary": "Mendirikan sebuah komunitas kecil bernama {{broinet}} di kampung halaman saya untuk memperkenalkan dunia jaringan komputer kepada masyarakat. Melalui komunitas ini, kami juga berkesempatan merancang dan {{lanwork}}."
+      },
+      {
+        "time": "2015",
+        "title": "Teknik Komputer dan Jaringan",
+        "summary": "Di sinilah semuanya dimulai. Saya bersekolah di {{smk6luwu}} dan mengambil jurusan Teknik Komputer dan Jaringan."
+      }
+    ]
+  }
+}
