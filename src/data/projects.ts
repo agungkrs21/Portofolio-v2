@@ -1,6 +1,15 @@
 export const projects = {
-  summary:
-    "I'm currently building an interactive portfolio mini-game with two goals. Once it's finished, I'll integrate it into this website:",
+  summary: {
+    text: "I'm currently building an interactive portfolio {{minigame}} with two goals. Once it's finished, I'll integrate it into this website:",
+    links: [
+      {
+        id: 'minigame',
+        text: 'mini-game',
+        href: 'https://github.com/agungkrs21/portofolio-game',
+      },
+    ],
+  },
+
   pourpose: [
     {
       title: 'For Recruiters & Visitors',
