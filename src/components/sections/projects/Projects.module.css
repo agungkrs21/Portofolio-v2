@@ -95,6 +95,11 @@
 .video_ct {
   border-radius: 16px;
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 15.8/9.6;
 }
 
 /* right box */

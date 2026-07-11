@@ -4,7 +4,7 @@ import { projects } from '@/data/projects';
 import RecentCommits from '@/components/recent-commits/RecentCommits';
 import { Suspense } from 'react';
 import RecentCommitsSkeleaton from '@/components/recent-commits/RecentCommitsSkelaton';
-import { Video } from '@/components/client/video/Video';
+import { Video } from '@/components/ui/video/Video';
 import { parseText } from '@/utils/parseText';
 
 export default function Projects() {
@@ -88,11 +88,6 @@ function Featured() {
       </ul>
 
       <div className={`${styles.video_ct}`}>
-        <a
-          href="https://github.com/agungkrs21/portofolio-game"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
         <Video source="/video/bw-portofolio-game.mp4" />
       </div>
     </section>

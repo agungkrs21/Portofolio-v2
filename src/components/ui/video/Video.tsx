@@ -8,7 +8,7 @@ export function Video({ source }: { source: string }) {
       loop
       playsInline
       preload="auto"
-      className="rounded-2xl"
+      className="rounded-2xl w-full h-full"
     />
   );
 }

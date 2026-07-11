@@ -1,4 +1,4 @@
-.container h3 {
+.container h2 {
   position: relative;
   margin-left: 25px;
   margin-bottom: 0.5rem;
@@ -6,7 +6,7 @@
   color: var(--color-primary);
 }
 
-.container h3::before {
+.container h2::before {
   content: '';
   background: url('/icon/git-commit.png');
   position: absolute;
