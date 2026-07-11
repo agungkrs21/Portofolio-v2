@@ -4,7 +4,11 @@ import { profile } from '@/data/profile';
 import Link from 'next/link';
 import { DialogBox } from '@/components/client/dialog-box/DialogBox';
 
-export default function About() {
+interface AboutProps {
+  locale: string;
+}
+
+export default function About({ locale }: AboutProps) {
   return (
     <section className={`${styles.about}`} id="about">
       <div className={`maxwidth firstPage ${styles.wrapper}`}>
@@ -14,7 +18,7 @@ export default function About() {
             <span>{profile.name}</span>, {profile.heroDescription}
           </p>
 
-          <Link href="/about">
+          <Link href={`/${locale}/about`}>
             <p className={`${styles.abMore}`}>More about me</p>
           </Link>
 

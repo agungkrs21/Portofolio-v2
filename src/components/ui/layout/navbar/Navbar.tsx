@@ -5,12 +5,11 @@ import styles from './Navbar.module.css';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button/Button';
 import { useState, useRef, useEffect } from 'react';
-import type { Locale } from '@/i18n/config';
 
 // readonly type
 const links = ['about', 'projects', 'contact'] as const;
 interface NavBarPorps {
-  locale: Locale;
+  locale: string;
 }
 
 export default function NavBar({ locale }: NavBarPorps) {

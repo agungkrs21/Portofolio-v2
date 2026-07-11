@@ -3,10 +3,14 @@ import Contact from '@/components/sections/contact/Contact';
 import Experince from '@/components/sections/experience/Experience';
 import Projects from '@/components/sections/projects/Projects';
 
-export default function Home() {
+export default async function Home({
+  params,
+}: Readonly<{ params: Promise<{ locale: string }> }>) {
+  const { locale } = await params;
+
   return (
     <main>
-      <About />
+      <About locale={locale} />
       <Experince />
       <Projects />
       <Contact />
