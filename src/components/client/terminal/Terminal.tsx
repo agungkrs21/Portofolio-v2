@@ -29,7 +29,6 @@ export function Terminal() {
   function onCategoryChange(panel: PanelKey) {
     setActivePanel(panel);
   }
-  console.log('memew');
   return (
     <div
       aria-label="open terminal"
@@ -46,7 +45,8 @@ export function Terminal() {
           <p
             className={`${styles.wIcon}  ${isActive ? styles.iActive : styles.iDeactive}`}
           >
-            {'>_'}
+            {'>'}
+            <span>_</span>
           </p>
         </div>
         {isActive && (

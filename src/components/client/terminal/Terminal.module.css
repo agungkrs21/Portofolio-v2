@@ -43,6 +43,10 @@
   transition: translate 0.5s ease-in-out;
 }
 
+.topbar .wIcon span {
+  animation: blink 2s infinite;
+}
+
 .topbar .iDeactive {
   color: var(--color-white-200);
   translate: 85% 25%;
@@ -129,6 +133,19 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
   }
 }
 

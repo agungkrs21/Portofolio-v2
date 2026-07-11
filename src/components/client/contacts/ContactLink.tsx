@@ -93,7 +93,7 @@ export function ContactLink({ links, styles }: Props) {
 
 function ToastContainer({ type, message }: { type: string; message: string }) {
   return (
-    <div className={styles.toastContainer}>
+    <div className={`${styles.toastContainer} ${styles[type]}`}>
       <Image
         src="/icon/toast-cat.png"
         alt="sprite-cat"
