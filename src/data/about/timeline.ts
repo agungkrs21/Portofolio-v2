@@ -1,5 +1,7 @@
 export const timelinesAssets = [
-  { links: [], picture: '/images/projects/portofoliov1.png' },
+  {
+    links: [{ id: '', text: '', href: '' }],
+  },
   {
     links: [
       {
@@ -13,7 +15,6 @@ export const timelinesAssets = [
         href: 'https://www.researchgate.net/publication/393462888_Rancang_Bangun_Aplikasi_Framework_Pentest_Untuk_Linux_Debian',
       },
     ],
-    picture: '/images/projects/portofoliov1.png',
   },
   {
     links: [
@@ -23,7 +24,6 @@ export const timelinesAssets = [
         href: 'https://pegadaian.co.id/',
       },
     ],
-    picture: '/images/projects/pegadaian-work.png',
   },
   {
     links: [
@@ -33,7 +33,6 @@ export const timelinesAssets = [
         href: 'https://eloquentjavascript.net/',
       },
     ],
-    picture: '/images/projects/first-web.png',
   },
   {
     links: [
@@ -48,7 +47,6 @@ export const timelinesAssets = [
         href: 'https://makassar.tribunnews.com/2016/09/23/karena-guru-ini-smkn-2-belopa-dan-smkn-1-suli-terapkan-pembelajaran-berbasis-it',
       },
     ],
-    picture: '/images/projects/broinet.png',
   },
   {
     links: [
@@ -58,6 +56,5 @@ export const timelinesAssets = [
         href: 'https://www.uptsmkn6luwu.sch.id/',
       },
     ],
-    picture: '/images/projects/first-start.png',
   },
 ];

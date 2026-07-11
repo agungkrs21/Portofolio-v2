@@ -1,4 +1,5 @@
 import { locales } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 import { notFound } from 'next/navigation';
 
 import NavBar from '@/components/ui/layout/navbar/Navbar';
@@ -18,13 +19,13 @@ export default async function SiteLayout({
 }>) {
   const { locale } = await params;
 
-  if (!locales.includes(locale as (typeof locales)[number])) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
 
   return (
     <>
-      <NavBar locale={locale}/>
+      <NavBar locale={locale} />
       {children};
       <UtilityDock />
     </>
