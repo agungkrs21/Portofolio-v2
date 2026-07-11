@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  height: 70vh;
+}
+
+.container p {
+  max-width: 700px;
+}
+
+.container p a {
+  color: var(--color-white);
+}
+.container p a:hover {
+  color: var(--color-primary);
+}
