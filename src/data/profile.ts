@@ -11,7 +11,7 @@ export const profile = {
   heroDescription:
     "a web developer with a focus on front-end development. I'm currently building my career by creating modern web applications and continuously improving my skills. My goal is to craft intuitive, accessible, and visually engaging user experiences.",
 
-  goal: 'I aspire to build a career where I can channel my ideas and creativity through crafting engaging and well-designed web applications.',
+  goal: 'I aspire to build a career where I can bring my ideas to life through engaging, well-designed web applications.',
 
   about:
     "I've been building web applications for over  one years now, and  I'm always eager to learn more.",

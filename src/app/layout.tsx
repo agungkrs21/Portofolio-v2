@@ -8,7 +8,6 @@ import './globals.css';
 import { montserrat, comfortana } from '@/lib/fonts/fonts';
 // layout
 import Footer from '@/components/ui/layout/footer/Footer';
-import UtilityDock from '@/components/ui/layout/utility-dock/UtilityDock';
 import { WebVitalsCollector } from '@/components/collectors';
 
 // SEO
@@ -124,9 +123,7 @@ export default function RootLayout({
     >
       <body>
         <WebVitalsCollector />
-
         {children}
-        <UtilityDock />
         <Footer />
 
         <script

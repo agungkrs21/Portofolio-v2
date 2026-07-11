@@ -24,7 +24,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wrapper .topbar {
@@ -33,7 +33,7 @@
   left: 0;
   right: 0;
   background: var(--color-white-200);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .fadeIn {
-  animation: fadein 0.8s ease-in-out;
+  animation: fadein 0.4s linear;
 }
 
 .panelCt > button {

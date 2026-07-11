@@ -1,13 +1,17 @@
 import NavBar from '@/components/ui/layout/navbar/Navbar';
+import UtilityDock from '@/components/ui/layout/utility-dock/UtilityDock';
 import { ReactNode } from 'react';
 
-export default function PageLayout({
+export default function SiteLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
-  return <>
-    <NavBar />
-    {children};
-  </>;
+  return (
+    <>
+      <NavBar />
+      {children};
+      <UtilityDock />
+    </>
+  );
 }

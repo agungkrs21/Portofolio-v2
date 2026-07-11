@@ -13,3 +13,10 @@
   font-size: var(--font-size-m);
   margin-bottom: 1rem;
 }
+
+@media (width <= 720px) {
+  .dialogBox > p {
+    font-size: var(--font-size-sl);
+    margin-bottom: 1rem;
+  }
+}

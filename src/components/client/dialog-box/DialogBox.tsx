@@ -14,7 +14,7 @@ export function DialogBox({ dialog }: DialogBoxPrps) {
         width={166}
         height={205}
         style={{ imageRendering: 'pixelated' }}
-        className="rendering-pixelated w-[120px] h-[120px]"
+        className="[image-rendering:pixelated] w-[120px] h-auto"
       />
       <p>{dialog}</p>
     </div>

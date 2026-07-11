@@ -1,0 +1,121 @@
+.crt {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.crt_overlay {
+  position: absolute;
+  z-index: 55;
+  pointer-events: none;
+}
+
+.crt_overlay.scanlines {
+  inset: 0;
+  opacity: 0.3;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgb(255 255 255 / 0.04) 3px,
+    rgb(0 0 0 / 0.1) 4px
+  );
+
+  animation: scanlines 8s linear infinite;
+}
+
+.crt_overlay.rgb_split {
+  inset: 0;
+  backdrop-filter: drop-shadow(-1px 0 rgba(255, 0, 0, 0.4))
+    drop-shadow(1px 0 rgba(0, 255, 255, 0.4));
+
+  animation: rgb-jitter 4s infinite;
+}
+
+.crt_overlay.noise {
+  inset: -20rem;
+  opacity: 0.1;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.5) 1px,
+    transparent 1px
+  );
+  backdrop-filter: drop-shadow(-1px 0 rgba(255, 0, 0, 0.4))
+    drop-shadow(1px 0 rgba(0, 255, 255, 0.4));
+  background-size: 3px 3px;
+  animation:
+    noise 0.2s steps(2) infinite,
+    sp-wobble 8s infinite;
+}
+
+@keyframes scanlines {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes sp-wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-8deg) translateY(-2px);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(8deg) translateY(-2px);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rgb-jitter {
+  0%,
+  90%,
+  100% {
+    backdrop-filter: drop-shadow(-1px 0 rgba(255, 0, 0, 0.4))
+      drop-shadow(1px 0 rgba(0, 255, 255, 0.4));
+  }
+
+  91% {
+    backdrop-filter: drop-shadow(-2px 0 rgba(255, 0, 0, 0.6))
+      drop-shadow(2px 0 rgba(0, 255, 255, 0.6));
+  }
+
+  93% {
+    backdrop-filter: drop-shadow(2px 0 rgba(255, 0, 0, 0.6))
+      drop-shadow(-2px 0 rgba(0, 255, 255, 0.6));
+  }
+}
+@keyframes noise {
+  from {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-2%, 1%);
+  }
+
+  50% {
+    transform: translate(1%, -1%);
+  }
+
+  75% {
+    transform: translate(-1%, 2%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
