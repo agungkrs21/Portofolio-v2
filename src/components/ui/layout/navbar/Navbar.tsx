@@ -5,11 +5,15 @@ import styles from './Navbar.module.css';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button/Button';
 import { useState, useRef, useEffect } from 'react';
+import type { Locale } from '@/i18n/config';
 
 // readonly type
 const links = ['about', 'projects', 'contact'] as const;
+interface NavBarPorps {
+  locale: Locale;
+}
 
-export default function NavBar() {
+export default function NavBar({ locale }: NavBarPorps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
 
@@ -28,7 +32,7 @@ export default function NavBar() {
   return (
     <nav className={`${styles.navbar}`}>
       <div ref={menuRef} className={`${styles.container}`}>
-        <Link href="/">
+        <Link href={`/${locale}`}>
           <Image
             src="/brand.svg"
             alt="logo"
@@ -45,7 +49,7 @@ export default function NavBar() {
         >
           {links.map((link) => (
             <li key={link}>
-              <Button href={`/#${link}`}>{link.toUpperCase()}</Button>
+              <Button href={`/${locale}#${link}`}>{link.toUpperCase()}</Button>
             </li>
           ))}
           <li>
