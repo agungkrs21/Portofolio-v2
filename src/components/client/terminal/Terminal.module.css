@@ -9,6 +9,7 @@
 .wDeactive {
   width: 50px;
   height: 35px;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -24,7 +25,6 @@
   align-items: center;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-  cursor: pointer;
 }
 
 .wrapper .topbar {
@@ -34,6 +34,7 @@
   right: 0;
   background: var(--color-white-200);
   transition: all 0.5s ease-in-out;
+  z-index: 1;
 }
 
 .topbar .wIcon {
@@ -71,6 +72,7 @@
   top: 0;
   right: 0.7rem;
   color: var(--red-bg);
+  z-index: 2;
 }
 .panelCt > button:hover {
   transform: scale(1.1);
@@ -85,7 +87,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
+  backdrop-filter: blur(5px);
 }
 
 .categories li {

@@ -1,7 +1,39 @@
 .container {
-  width: 100%;
   height: 100%;
-  display: flex;
+}
+
+.container > p {
+  text-align: center;
+  font-weight: 700;
+  padding-bottom: 1.4rem;
+}
+
+.container > p:not(:first-child) {
+  margin-top: 1.4rem;
+}
+
+.device_info {
+  display: grid;
+  margin: auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   justify-content: center;
   align-items: center;
+  text-align: center;
+  gap: 1rem;
+  font-size: var(--font-size-sl);
+}
+.device_info > p {
+  margin-top: -0.6rem;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.device_info:first-of-type > p span:first-of-type {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.device_info:not(:first-of-type) > p span:first-of-type {
+  color: var(--color-primary);
+  font-weight: 700;
 }

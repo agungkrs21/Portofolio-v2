@@ -4,7 +4,10 @@ export function platformInfo() {
   const hardwareInfo = getHardwareInfo();
   const resources = getResourceStats();
 
-  return { cssFeatures, deviceInfo, hardwareInfo, resources };
+  return [
+    [...cssFeatures],
+    [...hardwareInfo, ...deviceInfo, ...resources],
+  ] as const;
 }
 
 function getCssFeatures() {
@@ -30,7 +33,7 @@ function getCssFeatures() {
       support: CSS.supports('selector(:has(*))'),
     },
     {
-      name: 'Scroll-Driven Animations',
+      name: 'Scroll Animations',
       support: CSS.supports('animation-timeline', 'scroll()'),
     },
     {
@@ -46,7 +49,7 @@ function getCssFeatures() {
       support: CSS.supports('color', 'oklch(50% 0.2 240)'),
     },
     {
-      name: 'Dynamic Viewport (dvh)',
+      name: 'Dynamic Viewport',
       support: CSS.supports('height', '100dvh'),
     },
   ];
@@ -128,10 +131,10 @@ function getResourceStats() {
   );
 
   return [
-    {
-      name: 'Resources',
-      value: stats.totalResources,
-    },
+    // {
+    //   name: 'Resources',
+    //   value: stats.totalResources,
+    // },
     {
       name: 'Transfer Size',
       value: formatBytes(stats.totalTransfer),

@@ -3,18 +3,14 @@
 import styles from './PerfomancePanel.module.css';
 import { LoadingBar } from '@/components/ui/loading-bar/LoadingBar';
 import { formatMetric, FormattedMetric } from '@/utils/formatMetric';
-import {
-  useWebVitalsStore,
-  MetricKey,
-  METRIC_KEYS,
-} from '@/stores/performance.store';
+import { useWebVitalsStore, METRIC_KEYS } from '@/stores/performance.store';
 
 export default function PerfomancePanel() {
   const metrics = useWebVitalsStore((s) => s.metrics);
   const metricsFormatted = METRIC_KEYS.map((key) =>
     formatMetric(key, metrics[key]),
   ).filter((metric): metric is FormattedMetric => metric !== null);
-  // console.log(formattedMetrics);
+
   return (
     <div className={`${styles.container}`}>
       <p>Real User Metrics</p>
