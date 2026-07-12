@@ -1,53 +1,56 @@
-import { profile } from '@/data/profile';
-import styles from './Experience.module.css';
-import { TechCategory } from '@/components/client/tech-category/TechCategory';
-import { techstacks } from '@/data/techstack';
 import Image from 'next/image';
+import styles from './Experience.module.css';
+import { experienceAsset } from '@/data/site/experience';
+import type { Experience } from '@/i18n/locales/en/site/types';
+import { TechCategory } from '@/components/client/tech-category/TechCategory';
 
-export default function Experince() {
+interface ExperienceProps {
+  dict: Experience;
+}
+
+export default function Experince({ dict }: ExperienceProps) {
   return (
     <section id="experience" className={`${styles.experience}`}>
       <div className={`maxwidth ${styles.container}`}>
-        <p>{profile.about}</p>
-        <p>Some technologies I&apos;ve worked with:</p>
+        <p>{dict.title}</p>
+        <p>{dict.sub_heading}</p>
 
-        <TechCategory techstacks={techstacks} />
+        <TechCategory categories={dict.categories} items={dict.items} />
       </div>
+
       <div className={` maxwidth ${styles.scriptCT}`}>
-        <div>
-          <p>TypeScript</p>
-          <p>
-            I am proficient in TypeScript, whether I&apos;m working with React
-            or Node.js, using it to build scalable, maintainable, and type-safe
-            applications.
-          </p>
-
-          <Image
-            src="/images/tstext-logo.png"
-            alt=""
-            width={300}
-            height={120}
-            className={`[image-rendering:pixelated] ${styles.gray}`}
-            unoptimized
+        {dict.environtment.map((env, index) => (
+          <Enviroment
+            key={env.id}
+            title={env.title}
+            summary={env.summary}
+            index={index}
           />
-        </div>
-        <div>
-          <p>Arch Linux</p>
-          <p>
-            Comfortable working in Linux environments, with Arch Linux as my
-            primary operating system for daily development.
-          </p>
-
-          <Image
-            src="/images/archtext-logo.png"
-            alt=""
-            width={300}
-            height={120}
-            className={`[image-rendering:pixelated] ${styles.gray}`}
-            unoptimized
-          />
-        </div>
+        ))}
       </div>
     </section>
+  );
+}
+
+interface EnviromentProps {
+  title: string;
+  summary: string;
+  index: number;
+}
+
+function Enviroment({ title, summary, index }: EnviromentProps) {
+  return (
+    <div>
+      <p>{title}</p>
+      <p>{summary}</p>
+      <Image
+        src={`${experienceAsset.environment[index]}`}
+        alt=""
+        width={300}
+        height={120}
+        className={`[image-rendering:pixelated] ${styles.gray}`}
+        unoptimized
+      />
+    </div>
   );
 }

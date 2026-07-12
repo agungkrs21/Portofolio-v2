@@ -12,8 +12,8 @@ export default async function Home({
   const dict = await getDictionary(locale as Locale);
   return (
     <main>
-      <About locale={locale} />
-      <Experince />
+      <About locale={locale} dict={dict.site.profile.about} />
+      <Experince dict={dict.site.profile.experience} />
       <Projects />
       <Contact />
     </main>
