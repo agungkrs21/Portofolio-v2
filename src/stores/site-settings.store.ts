@@ -1,10 +1,10 @@
 import { create } from 'zustand';
-
+import type { Locale } from '@/i18n/config';
 // "pirete software" style 🤣
 export type Toggle = 0 | 1;
 
-type Settings = {
-  language: string;
+export type Settings = {
+  language: Locale;
   cursor: Toggle;
   animation: Toggle;
   crt_effect: Toggle;

@@ -1,6 +1,7 @@
+'use client';
+
 import { platformInfo, PlatformInfo } from '@/collectors/platformInfo';
 import styles from './CommandPanel.module.css';
-import Image from 'next/image';
 
 export default function ComamndPanel() {
   const [cssFeatures, deviceInfo]: PlatformInfo = platformInfo();

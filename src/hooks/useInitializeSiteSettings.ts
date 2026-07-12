@@ -1,8 +1,9 @@
 import { useSiteSettings } from '@/stores/site-settings.store';
 import { useEffect } from 'react';
 import type { SettingsKey } from '@/stores/site-settings.store';
+import { Locale } from '@/i18n/config';
 
-export function useInitializeSiteSettings({ locale }: { locale: string }) {
+export function useInitializeSiteSettings({ locale }: { locale: Locale }) {
   const initialize = useSiteSettings((s) => s.initialize);
 
   useEffect(() => {

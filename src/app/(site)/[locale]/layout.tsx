@@ -145,7 +145,7 @@ export default async function SiteLayout({
         {children}
         <UtilityDock />
         <Footer locale={locale} />
-        <WebVitalsCollector />
+        <WebVitalsCollector locale={locale as Locale} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

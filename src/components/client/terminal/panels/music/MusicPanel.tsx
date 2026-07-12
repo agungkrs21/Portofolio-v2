@@ -1,7 +1,7 @@
-import Image from "next/image";
-import styles from "./MusicPanel.module.css"
+'use client';
 
-
+import Image from 'next/image';
+import styles from './MusicPanel.module.css';
 
 export default function MusicPanel() {
   return (

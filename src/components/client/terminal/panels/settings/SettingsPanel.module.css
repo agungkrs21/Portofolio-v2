@@ -8,12 +8,43 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.container > section:last-child {
+  opacity: 0.3;
+}
+
 .container > section > div {
   display: flex;
   justify-content: space-between;
+  margin-left: 10px;
 }
-.set_languge {
+.button_ct {
+  isolation: isolate;
+  position: relative;
   display: grid;
   width: 90px;
+
   grid-template-columns: repeat(2, 1fr);
+}
+.button_ct button {
+  cursor: pointer;
+}
+
+.button_ct > div {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  background: var(--color-primary);
+  height: 100%;
+  width: 50%;
+  border-radius: 8px;
+  mix-blend-mode: color-dodge;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.button_off {
+  transform: translateX(100%);
+}
+.button_on {
+  transform: translateX(0%);
 }
