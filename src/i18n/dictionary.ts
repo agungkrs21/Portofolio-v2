@@ -7,7 +7,7 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   id: () => import('@/i18n/locales/id').then((module) => module.default),
 };
 
-// Sekarang fungsi ini tidak akan memicu error lagi!
+
 export async function getDictionary(locale: Locale): Promise<Dictionary> {
   return dictionaries[locale]();
 }

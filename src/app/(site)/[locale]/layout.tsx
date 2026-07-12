@@ -25,7 +25,7 @@ export default async function SiteLayout({
 
   return (
     <>
-      <NavBar locale={locale} />
+      <NavBar locale={locale as Locale} />
       {children};
       <UtilityDock />
     </>

@@ -1,0 +1,37 @@
+.container {
+  position: relative;
+}
+
+.container ul {
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: translate 0.3s ease-in-out;
+}
+
+.hamburgerMenu_ct {
+  display: none;
+}
+
+.menu_open {
+  translate: 0% 20% !important;
+}
+
+@media (width <= 720px) {
+  .hamburgerMenu_ct {
+    display: block;
+  }
+  .container > ul {
+    background: var(--background);
+    padding: 2rem;
+    border-radius: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    translate: 200% 20%;
+    flex-direction: column;
+  }
+}

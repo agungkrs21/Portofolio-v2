@@ -1,36 +1,19 @@
-'use client';
-
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button/Button';
-import { useState, useRef, useEffect } from 'react';
+import type { Locale } from '@/i18n/config';
+import { LinkNavigation } from '@/components/ui/layout/navbar/LinkNavigation';
+import { getDictionary } from '@/i18n/dictionary';
 
-// readonly type
-const links = ['about', 'projects', 'contact'] as const;
 interface NavBarPorps {
-  locale: string;
+  locale: Locale;
 }
 
-export default function NavBar({ locale }: NavBarPorps) {
-  const menuRef = useRef<HTMLDivElement>(null);
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const clickOutsideMenu = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener('pointerdown', clickOutsideMenu);
-
-    return () => document.removeEventListener('pointerdown', clickOutsideMenu);
-  }, []);
-
+export default async function NavBar({ locale }: NavBarPorps) {
+  const { navBar } = await getDictionary(locale);
   return (
     <nav className={`${styles.navbar}`}>
-      <div ref={menuRef} className={`${styles.container}`}>
+      <div className={`${styles.container}`}>
         <Link href={`/${locale}`}>
           <Image
             src="/brand.svg"
@@ -42,32 +25,7 @@ export default function NavBar({ locale }: NavBarPorps) {
           />
         </Link>
 
-        {/* link navigation */}
-        <ul
-          className={`flex-center ml-auto ${open ? styles.open : styles.close}`}
-        >
-          {links.map((link) => (
-            <li key={link}>
-              <Button href={`/${locale}#${link}`}>{link.toUpperCase()}</Button>
-            </li>
-          ))}
-          <li>
-            {/* resume buttom */}
-            <Button variant="secondary">RESUME</Button>
-          </li>
-        </ul>
-        {/* hamburger icon */}
-        <div className={styles.hamburger}>
-          <Button padding={false} onClick={() => setOpen(!open)}>
-            <Image
-              src="/icon/hamburger.svg"
-              alt="hamburger"
-              width={30}
-              height={30}
-              className="pixelated h-[30px] w-[30px]"
-            />
-          </Button>
-        </div>
+        <LinkNavigation locale={locale} links={navBar.links} />
       </div>
     </nav>
   );

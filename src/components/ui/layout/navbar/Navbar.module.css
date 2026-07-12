@@ -3,53 +3,24 @@
   top: 0;
   background: var(--background);
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 1000;
 }
 
 .container {
-  margin: 0.9rem 1.5rem;
-  width: 1240px;
+  margin: auto;
+  padding: 1.2rem 2rem;
+  max-width: 1440px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
 
-.container ul li {
-  margin: 0 8px;
-}
-
-.open {
-  right: -20;
-}
-.close {
-  right: -200;
-}
-
-.hamburger {
-  display: none;
-}
-
 @media (width <= 720px) {
-  .container ul {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: self-start;
-    gap: 15px;
-    top: 58px;
-    width: 180px;
-    background: var(--color-black-900);
-    padding: 2rem;
-    border-radius: 0.8rem;
-    transition: all 0.1s ease-in-out;
+  .container {
+    padding: 1.2rem 0.5rem;
   }
-
-  .hamburger {
-    display: block;
+  .container > a img {
+    margin-left: 1rem;
   }
 }
