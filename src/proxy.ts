@@ -19,8 +19,6 @@ export function proxy(request: NextRequest) {
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
-  console.log(hasLocale);
-
   if (hasLocale) {
     return NextResponse.next();
   }
