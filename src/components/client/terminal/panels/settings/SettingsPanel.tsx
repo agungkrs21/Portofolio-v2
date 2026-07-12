@@ -1,16 +1,38 @@
-import Image from "next/image";
-import styles from "./SettingsPanel.module.css"
+import Image from 'next/image';
+import styles from './SettingsPanel.module.css';
 
 export default function SettingsPanel() {
- return (
+  return (
     <div className={`${styles.container}`}>
-      <Image
-        src="/images/me-desk-200.png"
-        alt="Work In Progress"
-        width={208}
-        height={166}
-        className="[image-rendering:pixelated] h-auto w-[208px]"
-      />
+      <p>Currently avibale</p>
+      <section>
+        <div>
+          <p>Languge</p>
+          <div className={`${styles.set_languge}`}>
+            <button>en</button>
+            <button>id</button>
+          </div>
+        </div>
+        <div>
+          <p>Cursor</p>
+          <div>
+            <button>on</button>
+            <button>off</button>
+          </div>
+        </div>
+      </section>
+
+      <p>This here just to remaind me to add it</p>
+      <section>
+        <div>
+          <p>Animation</p>
+          <span>button here</span>
+        </div>
+        <div>
+          <p>Crt Effect</p>
+          <span>button here</span>
+        </div>
+      </section>
     </div>
   );
 }

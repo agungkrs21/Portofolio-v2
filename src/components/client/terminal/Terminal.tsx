@@ -17,8 +17,10 @@ const panelItems: Array<{
   icon: panel.icon,
 }));
 
+
+
 export function Terminal() {
-  const [activePanel, setActivePanel] = useState<PanelKey>('performance');
+  const [activePanel, setActivePanel] = useState<PanelKey>('settings');
   const [isActive, setIsActive] = useState<boolean>(false);
 
   function handleOpenWindow(state: boolean) {

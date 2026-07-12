@@ -144,7 +144,7 @@ export default async function SiteLayout({
         <NavBar locale={locale as Locale} />
         {children}
         <UtilityDock />
-        <Footer locale={locale}/>
+        <Footer locale={locale} />
         <WebVitalsCollector />
         <script
           type="application/ld+json"

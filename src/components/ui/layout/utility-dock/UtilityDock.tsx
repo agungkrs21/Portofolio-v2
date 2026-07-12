@@ -4,7 +4,7 @@ import styles from './UtilityDock.module.css';
 export default function UtilityDock() {
   return (
     <div className={`${styles.container}`}>
-      <Terminal />
+      <Terminal  />
     </div>
   );
 }
