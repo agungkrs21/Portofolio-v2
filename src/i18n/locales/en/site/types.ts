@@ -23,3 +23,30 @@ export type Experience = {
     summary: string;
   }[];
 };
+
+export type Projects = {
+  heading: {
+    title: string;
+    summary: string;
+    porpose: {
+      title: string;
+      summary: string;
+    }[];
+  };
+  featured: {
+    title: string;
+    summary: string;
+    key_feature: string[];
+  }[];
+  commision_projects: {
+    title: string;
+    summary: string;
+    works: {
+      title: string;
+      summary: string;
+      key_feature: string[];
+    }[];
+  };
+  key_feature: string;
+  tech: string;
+};

@@ -1,0 +1,86 @@
+{
+  "heading": {
+    "title": "Proyek Unggulan",
+    "summary": "Saat ini saya sedang mengembangkan {{minigame}} interaktif dengan dua tujuan. Setelah selesai, proyek ini akan saya integrasikan ke dalam website portofolio ini:",
+    "porpose": [
+      {
+        "title": "Untuk Rekruter & Pengunjung",
+        "summary": "Memberikan pengalaman yang lebih menarik dan interaktif dalam menjelajahi portofolio saya."
+      },
+      {
+        "title": "Untuk Diri Saya",
+        "summary": "Terus berkembang sebagai developer dengan menggabungkan pengembangan web, game, dan desain dalam satu proyek."
+      }
+    ]
+  },
+  "featured": [
+    {
+      "title": "Escape The Factory",
+      "summary": "Game platformer aksi 2D bertempo cepat yang mengajak pemain berperan sebagai robot yang terjebak di dalam sebuah pabrik industri raksasa.",
+      "key_feature": [
+        "Arsitektur Berorientasi Objek — Entitas game dirancang secara modular dan dapat digunakan kembali menggunakan prinsip OOP sehingga mudah dikembangkan.",
+        "Rendering Pixel Art yang Dioptimalkan — Aset beresolusi rendah ditampilkan dengan teknik pixel-perfect untuk menghasilkan visual yang tajam sekaligus meningkatkan performa.",
+        "AI Musuh Sederhana — Musuh akan mengejar pemain saat berada dalam jangkauan deteksi dan kembali ke posisi awal ketika pemain berhasil menjauh."
+      ]
+    },
+    {
+      "title": "Job Tracker",
+      "summary": "Platform manajemen lamaran kerja yang membantu pengguna mengelola peluang karier melalui antarmuka drag-and-drop yang intuitif.",
+      "key_feature": [
+        "Drag & Drop — Interaksi drag-and-drop yang responsif dengan rendering yang dioptimalkan.",
+        "Optimasi Core Web Vitals — Menggunakan skeleton loading untuk mengurangi layout shift (CLS).",
+        "Optimasi Performa React — Memanfaatkan memoized callback dan stable refs untuk meminimalkan re-render.",
+        "Sinkronisasi State di Sisi Klien — Pembaruan data dilakukan secara batch untuk mengurangi permintaan API yang tidak diperlukan.",
+        "Autentikasi JWT — Sistem autentikasi yang aman menggunakan JWT dan hashing kata sandi dengan bcrypt."
+      ]
+    },
+    {
+      "title": "Web Animations",
+      "summary": "Platform pembelajaran yang membahas dasar-dasar animasi web melalui visualisasi interaktif, contoh praktik, dan playground bawaan.",
+      "key_feature": [
+        "Dasar-Dasar Animasi — Mempelajari konsep inti animasi web modern.",
+        "Visualisasi Interaktif — Demonstrasi visual yang memudahkan proses pembelajaran.",
+        "Playground Langsung — Mencoba animasi secara langsung sekaligus melihat source code.",
+        "Desain Pengalaman Pengguna — Mendukung tema terang dan gelap dengan transisi halus serta visual yang mudah diakses."
+      ]
+    }
+  ],
+  "commision_projects": {
+    "title": "Proyek Komisi",
+    "summary": "Kumpulan proyek yang dikembangkan untuk memenuhi kebutuhan dan tantangan spesifik dari setiap klien.",
+    "works": [
+      {
+        "title": "Sistem Informasi Puskesmas Kalosi",
+        "summary": "Sistem manajemen layanan kesehatan berbasis web yang dikembangkan untuk Puskesmas Kalosi.",
+        "key_feature": [
+          "Chat Real-time — Memungkinkan komunikasi langsung dengan pengguna melalui pesan real-time yang didukung notifikasi di aplikasi web dan mobile.",
+          "Manajemen Artikel — Membuat, mengedit, dan mempublikasikan artikel kesehatan menggunakan Quill Rich Text Editor dengan dukungan gambar, heading, daftar, dan format teks lainnya.",
+          "Manajemen Pengguna — Mengelola data pengguna, memantau informasi akun, serta memelihara data pengguna yang terdaftar.",
+          "Manajemen Video Edukasi — Mengunggah, mengatur, memperbarui, dan menghapus video edukasi kesehatan yang dapat diakses melalui aplikasi mobile."
+        ]
+      },
+      {
+        "title": "Sistem Manajemen Distribusi PT Nuansa Cipta Magello",
+        "summary": "Sistem manajemen distribusi berbasis web yang dikembangkan untuk PT Nuansa Cipta Magello guna mengelola proses distribusi produk makanan kaleng secara lebih efisien.",
+        "key_feature": [
+          "Dashboard Analitik — Menampilkan metrik bisnis penting melalui dashboard interaktif untuk memantau aktivitas distribusi dan gudang.",
+          "Pelacakan Pengiriman Aktif — Memantau proses pengiriman secara real-time menggunakan data geolokasi dari aplikasi kurir.",
+          "Pembuatan Laporan Otomatis — Menghasilkan laporan distribusi dengan filter yang fleksibel serta dukungan ekspor ke Excel dan PDF.",
+          "Perancangan Basis Data — Menggunakan struktur basis data relasional untuk menjaga konsistensi data dan mendukung alur bisnis yang kompleks."
+        ]
+      },
+      {
+        "title": "AI Customer Service PT Yusran Karya Nusantara",
+        "summary": "Aplikasi customer service berbasis AI untuk Android yang dikembangkan bagi PT Yusran Karya Nusantara.",
+        "key_feature": [
+          "Asisten AI untuk Pelanggan — Memanfaatkan LLM OpenAI dengan Retrieval-Augmented Generation (RAG) untuk menjawab pertanyaan berdasarkan data dari vector database.",
+          "Chat Real-time — Dibangun menggunakan Appwrite Realtime agar pesan dapat dikirim dan disinkronkan secara instan di seluruh perangkat yang terhubung.",
+          "Pemrosesan di Sisi Server — Operasi penting dijalankan melalui Appwrite Functions sehingga aplikasi klien dapat berfokus pada rendering dan pengalaman pengguna.",
+          "Perancangan Basis Data — Menggunakan ChromaDB sebagai knowledge base perusahaan dan Appwrite Database untuk menyimpan data aplikasi."
+        ]
+      }
+    ]
+  },
+  "key_feature": "Fitur Utama",
+  "tech": "Teknologi"
+}

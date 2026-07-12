@@ -14,8 +14,8 @@ export default async function Home({
     <main>
       <About locale={locale} dict={dict.site.profile.about} />
       <Experince dict={dict.site.profile.experience} />
-      <Projects />
-      <Contact dict={dict.site.contact}/>
+      <Projects dict={dict.site.project} locale={locale} />
+      <Contact dict={dict.site.contact} />
     </main>
   );
 }
