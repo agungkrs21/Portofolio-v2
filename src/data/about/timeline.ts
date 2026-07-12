@@ -1,17 +1,32 @@
 export const timelinesAssets = [
   {
-    links: [{ id: '', text: '', href: '' }],
+    links: [
+      {
+        id: '',
+        text: {
+          en: '',
+          id: '',
+        },
+        href: '',
+      },
+    ],
   },
   {
     links: [
       {
         id: 'khci',
-        text: 'Kalosi Health Center Information System',
+        text: {
+          en: 'Kalosi Health Center Information System',
+          id: 'Sistem Informasi Kehesetan Puskesmas Kalosi',
+        },
         href: 'https://github.com/agungkrs21/web-kalosi-kesehatan',
       },
       {
         id: 'tesis',
-        text: "Bachelor's degree in Computer Science",
+        text: {
+          en: "Bachelor's degree in Computer Science",
+          id: 'gelar S.Kom',
+        },
         href: 'https://www.researchgate.net/publication/393462888_Rancang_Bangun_Aplikasi_Framework_Pentest_Untuk_Linux_Debian',
       },
     ],
@@ -20,7 +35,7 @@ export const timelinesAssets = [
     links: [
       {
         id: 'pegadaian',
-        text: 'Pegadaian',
+        text: { en: 'Pegadaian', id: 'Pegadaian' },
         href: 'https://pegadaian.co.id/',
       },
     ],
@@ -29,7 +44,7 @@ export const timelinesAssets = [
     links: [
       {
         id: 'elobook',
-        text: 'Eloquent JavaScript',
+        text: { en: 'Eloquent JavaScript', id: 'Eloquent JavaScript' },
         href: 'https://eloquentjavascript.net/',
       },
     ],
@@ -38,12 +53,15 @@ export const timelinesAssets = [
     links: [
       {
         id: 'broinet',
-        text: 'Broinet',
+        text: { en: 'Broinet', id: 'Broinet' },
         href: 'https://www.facebook.com/share/p/1H5FwoTgQF/',
       },
       {
         id: 'lanwork',
-        text: 'set up local area networks (LANs) for several schools in the area',
+        text: {
+          en: 'set up local area networks (LANs) for several schools in the area',
+          id: 'instalasi jaringan LAN pada beberapa sekolah di desaku',
+        },
         href: 'https://makassar.tribunnews.com/2016/09/23/karena-guru-ini-smkn-2-belopa-dan-smkn-1-suli-terapkan-pembelajaran-berbasis-it',
       },
     ],
@@ -52,7 +70,10 @@ export const timelinesAssets = [
     links: [
       {
         id: 'smk6luwu',
-        text: 'vocational high school',
+        text: {
+          en: 'vocational high school',
+          id: 'sekolah menengah kejuruan (SMK)',
+        },
         href: 'https://www.uptsmkn6luwu.sch.id/',
       },
     ],

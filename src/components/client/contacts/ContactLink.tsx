@@ -4,6 +4,7 @@ import styles from './ContactLink.module.css';
 import { copyToClipBoard } from '@/utils/clipboard';
 import Image from 'next/image';
 import { useState } from 'react';
+import { contactAsset } from '@/data/site/contact';
 
 type Toast = {
   id: string;
@@ -11,18 +12,13 @@ type Toast = {
   type: 'success' | 'error';
 };
 
-type Links = {
-  url: string;
-  name: string;
-  icon: string;
-  term: string;
-};
-type Props = {
-  links: Links[];
+type Links = { id: string; text: string }[];
+interface ContactLinkProps {
+  links: Links;
   styles: string;
-};
+}
 
-export function ContactLink({ links, styles }: Props) {
+export function ContactLink({ links, styles }: ContactLinkProps) {
   const [toast, setToast] = useState<Toast[]>([]);
   const [counter, setCounter] = useState<number>(0);
 
@@ -57,31 +53,23 @@ export function ContactLink({ links, styles }: Props) {
         <ToastContainer key={t.id} type={t.type} message={t.message} />
       ))}
       <ul className={`${styles}`}>
-        {links.map((link) => {
-          const isExternal =
-            link.url.startsWith('http://') || link.url.startsWith('https://');
-
-          const anchorProps = isExternal
-            ? {
-                href: link.url,
-                target: '_blank',
-                rel: 'noopener noreferrer',
-              }
-            : {
-                href: link.url,
-                onClick: () => handleCopied(link.url),
-              };
-
+        {links.map((contact, index) => {
           return (
-            <li key={link.name}>
-              <a {...anchorProps}>
+            <li key={contactAsset[index].id}>
+              <a
+                {...linkProps({
+                  link: contactAsset[index].link,
+                  callback: handleCopied,
+                })}
+                aria-label={`${contactAsset[index].id}`}
+              >
                 <Image
-                  src={link.icon}
-                  alt={`Sprite ${link.name}`}
+                  src={`${contactAsset[index].icon}`}
+                  alt=""
                   width={25}
                   height={23}
                 />
-                {link.term}
+                {contact.text}
               </a>
             </li>
           );
@@ -103,4 +91,26 @@ function ToastContainer({ type, message }: { type: string; message: string }) {
       <span>{message}</span>
     </div>
   );
+}
+
+type LinkProps = {
+  link: string;
+  callback: (str: string) => void;
+};
+
+function linkProps({ link, callback }: LinkProps) {
+  const isExternal = link.startsWith('http://') || link.startsWith('https://');
+
+  if (isExternal) {
+    return {
+      href: link,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    };
+  }
+
+  return {
+    href: link,
+    onClick: () => callback(link),
+  };
 }

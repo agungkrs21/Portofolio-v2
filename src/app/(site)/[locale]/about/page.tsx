@@ -5,6 +5,7 @@ import { parseText } from '@/utils/parseText';
 import { getDictionary } from '@/i18n/dictionary';
 import type { Locale } from '@/i18n/config';
 import type { Profile, Time_Lines } from '@/i18n/locales/en/about/type';
+
 export default async function About({
   params,
 }: {
@@ -17,7 +18,7 @@ export default async function About({
     <section aria-labelledby="about-heding">
       <div className={`firstPage maxwidth ${styles.container}`}>
         <AboutDetail dict={dict.pageAbout.profile.about} />
-        <Timeline dict={dict.pageAbout.profile.time_lines} />
+        <Timeline dict={dict.pageAbout.profile.time_lines} locale={locale} />
       </div>
     </section>
   );
@@ -54,9 +55,10 @@ function AboutDetail({ dict }: AboutDetailProps) {
 
 interface TimelineProps {
   dict: Time_Lines;
+  locale: string;
 }
 
-function Timeline({ dict }: TimelineProps) {
+function Timeline({ dict, locale }: TimelineProps) {
   return (
     <section
       aria-labelledby="timeline-heading"
@@ -78,6 +80,7 @@ function Timeline({ dict }: TimelineProps) {
                 {parseText({
                   text: tl.summary,
                   links: timelinesAssets[index].links,
+                  locale: locale,
                 })}
               </p>
             </div>

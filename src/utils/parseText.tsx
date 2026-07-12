@@ -1,11 +1,16 @@
 import { ReactNode } from 'react';
-
+type Text = { en: string; id: string };
 interface ParseTextParam {
   text: string;
-  links: { id: string; text: string; href: string }[];
+  links: { id: string; text: Text; href: string }[];
+  locale: string;
 }
 
-export function parseText({ text, links }: ParseTextParam): ReactNode[] {
+export function parseText({
+  text,
+  links,
+  locale,
+}: ParseTextParam): ReactNode[] {
   const map = new Map(links.map((link) => [link.id, link]));
 
   return text.split(/(\{\{.*?\}\})/g).map((part) => {
@@ -24,7 +29,7 @@ export function parseText({ text, links }: ParseTextParam): ReactNode[] {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {link.text}
+        {link.text[locale as keyof Text]}
       </a>
     );
   });

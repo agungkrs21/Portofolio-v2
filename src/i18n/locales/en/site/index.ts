@@ -1,7 +1,8 @@
-import profile from "./profile.json"
-
+import profile from './profile.json';
+import contact from './contact.json';
 const site = {
-  profile
-}
+  profile,
+  contact,
+};
 
-export default site
+export default site;
