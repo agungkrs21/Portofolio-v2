@@ -1,8 +1,7 @@
 'use client';
 import { useSiteSettings } from '@/stores/site-settings.store';
 import styles from './SettingsPanel.module.css';
-import type { SettingsKey, Toggle } from '@/stores/site-settings.store';
-import type { Locale } from '@/i18n/config';
+import { LanguageSwitcher } from '@/components/client/terminal/panels/settings/LanguaSwitter';
 // probably in the futre if i complete my panels i will make dedicated locales
 const LOCALES = {
   en: {
@@ -21,12 +20,7 @@ export default function SettingsPanel() {
   const { language, cursor, animation, crt_effect } = useSiteSettings(
     (s) => s.settings,
   );
-  const setSettings = useSiteSettings((s) => s.setSettings);
   const locale = LOCALES[language ?? 'en'];
-
-  function handleClick(key: SettingsKey, value: Toggle | Locale) {
-    setSettings(key, value);
-  }
 
   return (
     <div className={`${styles.container}`}>
@@ -34,29 +28,10 @@ export default function SettingsPanel() {
       <section>
         <div>
           <p>{locale.category[0]}</p>
-          <div className={`${styles.button_ct}`}>
-            <button onClick={() => handleClick('language', 'en')}>en</button>
-            <button onClick={() => handleClick('language', 'id')}>id</button>
-            <div
-              className={
-                language === 'id'
-                  ? `${styles.button_off}`
-                  : `${styles.button_on}`
-              }
-            />
-          </div>
+          <LanguageSwitcher state={language} />
         </div>
         <div>
           <p>{locale.category[1]}</p>
-          <div className={`${styles.button_ct}`}>
-            <button onClick={() => handleClick('cursor', 1)}>on</button>
-            <button onClick={() => handleClick('cursor', 0)}>off</button>
-            <div
-              className={
-                cursor === 0 ? `${styles.button_off}` : `${styles.button_on}`
-              }
-            />
-          </div>
         </div>
       </section>
 
@@ -64,17 +39,9 @@ export default function SettingsPanel() {
       <section>
         <div>
           <p>{locale.category[2]}</p>
-          <div className={`${styles.button_ct}`}>
-            <button>on</button>
-            <button>off</button>
-          </div>
         </div>
         <div>
           <p>{locale.category[3]}</p>
-          <div className={`${styles.button_ct}`}>
-            <button>on</button>
-            <button>off</button>
-          </div>
         </div>
       </section>
     </div>
