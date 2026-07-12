@@ -1,115 +1,105 @@
 'use client';
-
 import Image from 'next/image';
 import styles from './TechCategory.module.css';
 import { useState } from 'react';
-
-interface Tech {
-  name: string;
-  icon: string;
-}
-
-interface TechStacks {
-  category: string;
-  summary: string;
-  tech: Tech[];
-}
+import type { IdText } from '@/i18n/locales/en/site/types';
+import { experienceAsset } from '@/data/site/experience';
 
 interface TechCategoryProps {
-  techstacks: TechStacks[];
+  categories: IdText;
+  items: (IdText[number] & { title: string })[];
 }
 
-export function TechCategory({ techstacks }: TechCategoryProps) {
-  const categories = techstacks.map((tech) => tech.category);
+export function TechCategory({ categories, items }: TechCategoryProps) {
+  const [filter, setFilter] = useState<string>('all');
+
+  function onChangeCategory(category: string) {
+    if (filter === category) return;
+    setFilter(category);
+  }
+
   return (
     <div className={`${styles.container}`}>
-      <Categories categories={categories} techstacks={techstacks} />
+      <ul className={`${styles.categories}`}>
+        {categories.map((ct) => (
+          <Categories
+            key={ct.id}
+            id={ct.id}
+            category={ct.text}
+            filter={filter}
+            handleChange={onChangeCategory}
+          />
+        ))}
+      </ul>
+
+      <div className={`${styles.itemsContainer}`}>
+        {items.map((item) => (
+          <Items
+            key={item.id}
+            id={item.id}
+            filter={filter}
+            techs={
+              experienceAsset.techstacks[
+                item.id as keyof typeof experienceAsset.techstacks
+              ]
+            }
+            title={item.title}
+            summary={item.text}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
 interface CategoriesProps {
-  categories: string[];
-  techstacks: TechStacks[];
+  id: string;
+  category: string;
+  filter: string;
+  handleChange: (category: string) => void;
 }
 
-function Categories({ categories, techstacks }: CategoriesProps) {
-  const [fitler, setFilter] = useState<string>('All');
-  const [animate, setAnimate] = useState<boolean>(false);
-
-  const filteredTech =
-    fitler === 'All'
-      ? techstacks
-      : techstacks.filter((tech) => tech.category === fitler);
-
-  function handlerFilter(category: string) {
-    setFilter(category);
-    setAnimate(false);
-
-    requestAnimationFrame(() => {
-      setAnimate(true);
-    });
-  }
-
+function Categories({ id, category, filter, handleChange }: CategoriesProps) {
   return (
-    <>
-      <ul className={`${styles.categories}`}>
-        <li>
-          <button
-            className={`${fitler === 'All' ? styles.ctButtonActive : styles.ctButtonDeactive}`}
-            onClick={() => handlerFilter('All')}
-          >
-            <Image
-              src="/icon/all.png"
-              alt=""
-              width={21}
-              height={21}
-              className={`rendring-pixelated ${styles.ctIcon}`}
-            />
-            <p>All</p>
-          </button>
-        </li>
-        {categories.map((category) => (
-          <li key={category}>
-            <button
-              className={`${fitler === category ? styles.ctButtonActive : styles.ctButtonDeactive}`}
-              onClick={() => handlerFilter(category)}
-            >
-              <Image
-                src={`/icon/${category.toLowerCase()}.png`}
-                alt=""
-                width={21}
-                height={21}
-                className={`rendring-pixelated ${styles.ctIcon}`}
-              />
-              <p>{category}</p>
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      <div className={`${styles.itemsContainer}  `}>
-        {filteredTech.map((tech) => (
-          <Items key={tech.category} techs={tech} animate={animate} />
-        ))}
-      </div>
-    </>
+    <li key={id}>
+      <button
+        className={`${filter === category ? styles.ctButtonActive : styles.ctButtonDeactive}`}
+        onClick={() => handleChange(id)}
+      >
+        <Image
+          src={`/icon/${id}.png`}
+          alt=""
+          width={21}
+          height={21}
+          className={`[image-rendering:pixelated] ${styles.ctIcon}`}
+        />
+        <p>{category}</p>
+      </button>
+    </li>
   );
 }
 
 interface ItemsProps {
-  techs: TechStacks;
-  animate: boolean;
+  id: string;
+  filter: string;
+  techs: { name: string; icon: string }[];
+  title: string;
+  summary: string;
 }
 
-function Items({ techs, animate }: ItemsProps) {
+function Items({ id, filter, techs, title, summary }: ItemsProps) {
+  const match = (() => {
+    if (filter === 'all') return styles.show_items;
+
+    return id === filter ? styles.show_items : 'hidden';
+  })();
   return (
-    <section className={`${styles.items}`}>
-      <p>{techs.category}</p>
-      <p>{techs.summary}</p>
+    <section className={`${styles.items} ${match}`}>
+      <p>{title}</p>
+      <p>{summary}</p>
       <ul>
-        {techs.tech.map((t) => (
-          <li key={t.name} className={`${animate ? styles.animateFedeIn : ''}`}>
+        {techs.map((t) => (
+          <li key={t.name}>
             <Image
               src={`${t.icon}`}
               alt="Sprite React"

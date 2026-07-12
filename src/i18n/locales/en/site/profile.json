@@ -1,0 +1,62 @@
+{
+  "about": {
+    "name": "Agung Kurniawan",
+    "title": "Hi, I'M",
+    "summary": "a web developer with a focus on front-end development. I'm currently building my career by creating modern web applications and continuously improving my skills. My goal is to craft intuitive, accessible, and visually engaging user experiences.",
+    "goal": "I aspire to build a career where I can bring my ideas to life through engaging, well-designed web applications.",
+
+    "details": [
+      { "id": "location", "text": "Makassar, Indonesia" },
+
+      { "id": "degree", "text": "B.S. in Computer Science" },
+      { "id": "status", "text": "Avaible for work" },
+      { "id": "favorit_book", "text": "Atomic Habits" }
+    ],
+    "btn_text": "More About me"
+  },
+  "experience": {
+    "title": "I've been building web applications for over  one years now, and  I'm always eager to learn more.",
+    "sub_heading": "Some technologies i've worked with:",
+    "categories": [
+      { "id": "all", "text": "All" },
+      { "id": "i_front-end", "text": "Front-end" },
+      { "id": "i_backend", "text": "Backend" },
+      { "id": "i_cloud", "text": "Cloud" },
+      { "id": "i_utilities", "text": "Utilities" }
+    ],
+    "items": [
+      {
+        "id": "i_front-end",
+        "title": "Front-end",
+        "text": "Turning ideas into interactive and well-structured web applications,that deliver seamless user experiences."
+      },
+      {
+        "id": "i_backend",
+        "title": "Backend",
+        "text": "Familiar with backend fundamentals and continuously improving to better support full-stack development."
+      },
+      {
+        "id": "i_cloud",
+        "title": "Cloud",
+        "text": "Experienced with basic cloud deployment and eager to deepen my expertise."
+      },
+      {
+        "id": "i_utilities",
+        "title": "Utilities",
+        "text": "I use a range of tools to support editing, documentation, and mockup creation."
+      }
+    ],
+    "environtment": [
+      {
+        "id": "typescript",
+        "title": "TypeScript",
+        "summary": "I am proficient in TypeScript, whether I'm working with React or Node.js, using it to build scalable, maintainable, and type-safe applications."
+      },
+      {
+        "id": "arch-linux",
+        "title": "Arch Linux",
+        "summary": "Comfortable working in Linux environments, with Arch Linux as my primary operating system for daily development."
+      }
+    ]
+  }
+}

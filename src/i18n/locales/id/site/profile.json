@@ -1,0 +1,88 @@
+{
+  "about": {
+    "name": "Agung Kurniawan",
+    "title": "Halo, Saya",
+    "summary": "seorang web developer yang berfokus pada pengembangan front-end. Saat ini saya sedang membangun karier dengan mengembangkan aplikasi web modern dan terus meningkatkan kemampuan saya. Tujuan saya adalah menciptakan pengalaman pengguna yang intuitif, mudah diakses, dan menarik secara visual.",
+    "goal": "Menciptakan aplikasi web yang menarik, fungsional, dan berdampak.",
+
+    "details": [
+      {
+        "id": "location",
+        "text": "Makassar, Indonesia"
+      },
+      {
+        "id": "degree",
+        "text": "S1 Ilmu Komputer"
+      },
+      {
+        "id": "status",
+        "text": "Terbuka untuk bekerja"
+      },
+      {
+        "id": "favorit_book",
+        "text": "Atomic Habits"
+      }
+    ],
+    "btn_text": "Selengkapnya Tentang Saya"
+  },
+  "experience": {
+    "title": "Saya telah mengembangkan aplikasi web selama lebih dari satu tahun dan selalu antusias untuk terus belajar.",
+    "sub_heading": "Beberapa teknologi yang pernah saya gunakan:",
+    "categories": [
+      {
+        "id": "all",
+        "text": "Semua"
+      },
+      {
+        "id": "i_front-end",
+        "text": "Front-end"
+      },
+      {
+        "id": "i_backend",
+        "text": "Backend"
+      },
+      {
+        "id": "i_cloud",
+        "text": "Cloud"
+      },
+      {
+        "id": "i_utilities",
+        "text": "Utilitas"
+      }
+    ],
+    "items": [
+      {
+        "id": "i_front-end",
+        "title": "Front-end",
+        "text": "Mengubah ide menjadi aplikasi web yang interaktif, terstruktur dengan baik, dan mampu menghadirkan pengalaman pengguna yang mulus."
+      },
+      {
+        "id": "i_backend",
+        "title": "Backend",
+        "text": "Memiliki pemahaman yang baik mengenai dasar-dasar backend dan terus mengembangkan kemampuan untuk mendukung pengembangan full-stack."
+      },
+      {
+        "id": "i_cloud",
+        "title": "Cloud",
+        "text": "Memiliki pengalaman dalam deployment cloud dasar dan terus memperdalam pengetahuan di bidang cloud computing."
+      },
+      {
+        "id": "i_utilities",
+        "title": "Utilitas",
+        "text": "Menggunakan berbagai alat untuk mendukung proses pengeditan, dokumentasi, dan pembuatan mockup."
+      }
+    ],
+    "environtment": [
+      {
+        "id": "typescript",
+        "title": "TypeScript",
+        "summary": "Terbiasa menggunakan TypeScript, baik bersama React maupun Node.js, untuk membangun aplikasi yang skalabel dan mudah dipelihara."
+      },
+      {
+        "id": "arch-linux",
+        "title": "Arch Linux",
+        "summary": "Terbiasa bekerja di lingkungan Linux, dengan Arch Linux sebagai sistem operasi utama untuk aktivitas pengembangan sehari-hari."
+      }
+    ]
+  }
+}

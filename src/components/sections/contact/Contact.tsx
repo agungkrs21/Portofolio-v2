@@ -1,27 +1,30 @@
 import Image from 'next/image';
-import { contact } from '@/data/contact';
 import styles from './Contact.module.css';
 import { ContactLink } from '@/components/client/contacts/ContactLink';
+import type { IdText } from '@/i18n/locales/en/site/types';
 
-export default function Contact() {
+interface ContactProps {
+  dict: { summary: string; links: IdText };
+}
+
+export default function Contact({ dict }: ContactProps) {
   return (
     <section id="contact">
       <div className={`maxwidth ${styles.container}`}>
         <StayInTouch />
         {/* dialog box */}
         <div className={`${styles.dialogbox}`}>
-          <img
+          <Image
             src="/images/me-phone-o.png"
             alt="Pixel Art Sprite"
             width={186}
             height={238}
-            style={{ imageRendering: 'pixelated' }}
-            className="rendering-pixlated w-auto h-[238px]"
+            className="[image-rendering:pixelated] w-auto h-[238px]"
           />
-          <p>{contact.summary}</p>
+          <p>{dict.summary}</p>
         </div>
         {/* link contack */}
-        <ContactLink styles={styles.link} links={contact.links} />
+        <ContactLink links={dict.links} styles={styles.link} />
       </div>
     </section>
   );

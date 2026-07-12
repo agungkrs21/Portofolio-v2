@@ -2,19 +2,26 @@ import Image from 'next/image';
 import styles from './Projects.module.css';
 import { projects } from '@/data/projects';
 import RecentCommits from '@/components/recent-commits/RecentCommits';
-import { Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 import RecentCommitsSkeleaton from '@/components/recent-commits/RecentCommitsSkelaton';
 import { Video } from '@/components/ui/video/Video';
 import { parseText } from '@/utils/parseText';
+import type { Projects } from '@/i18n/locales/en/site/types';
+import { projectsAssets } from '@/data/site/projects';
 
-export default function Projects() {
+interface ProjectsProps {
+  dict: Projects;
+  locale: string;
+}
+
+export default function Projects({ dict, locale }: ProjectsProps) {
   return (
     <section id="projects" className={`${styles.projects}`}>
       <div className={`maxwidth ${styles.container}`}>
         {/* project left */}
         <div className={`${styles.gridColRow1} ${styles.gridL} `}>
           <div className={`${styles.wrapper}`}>
-            <Featured />
+            <Featured dict={dict.heading} locale={locale} />
             <Suspense fallback={<RecentCommitsSkeleaton />}>
               <RecentCommits />
             </Suspense>
@@ -23,20 +30,23 @@ export default function Projects() {
 
         {/* project right */}
         <div className={`${styles.gridColRow1} ${styles.gridR}`}>
-          {projects.featured.map((project, i) => (
-            <Project key={i} item={project} />
+          {dict.featured.map((work, index) => (
+            <Project
+              key={work.title}
+              item={{ ...work, ...projectsAssets.featured_link[index] }}
+            />
           ))}
 
           <div className={`${styles.breakPoint}`}>
-            <h2>Commissioned Projects</h2>
-            <p>
-              A showcase of custom projects created to solve the unique
-              challenges and requirements of individual clients.
-            </p>
+            <h2>{dict.commision_projects.title}</h2>
+            <p>{dict.commision_projects.summary}</p>
           </div>
 
-          {projects.commisionProjects.map((project, i) => (
-            <Project key={i} item={project} />
+          {dict.commision_projects.works.map((work, index) => (
+            <Project
+              key={work.title}
+              item={{ ...work, ...projectsAssets.commision_link[index] }}
+            />
           ))}
 
           <div className={`${styles.filler}`}></div>
@@ -46,42 +56,36 @@ export default function Projects() {
   );
 }
 
-type Tags = {
-  name: string;
-  color: string;
-};
+interface FeaturedProps {
+  dict: {
+    title: string;
+    summary: string;
+    porpose: {
+      title: string;
+      summary: string;
+    }[];
+  };
+  locale: string;
+}
 
-type Item = {
-  title: string;
-  url: string;
-  gitLink: string;
-  image: string;
-  term: string;
-  keyFeatures: string[];
-  tags: Tags[];
-};
-
-type Props = {
-  item: Item;
-};
-
-function Featured() {
+function Featured({ dict, locale }: FeaturedProps) {
   return (
     <section id="featured" className={`${styles.featured}`}>
-      <h1>Featured Projects</h1>
+      <h1>{dict.title}</h1>
       <p>
         {parseText({
-          text: projects.summary.text,
-          links: projects.summary.links,
+          text: dict.summary,
+          links: projectsAssets.sum_link,
+          locale,
         })}
       </p>
 
       <ul>
-        {projects.pourpose.map((p) => (
+        {dict.porpose.map((p) => (
           <li key={p.title}>
             <dl>
               <dt className={`${styles.term}`}>{p.title}</dt>
-              <dd className={`${styles.description}`}>{p.body}</dd>
+              <dd className={`${styles.description}`}>{p.summary}</dd>
             </dl>
           </li>
         ))}
@@ -94,62 +98,40 @@ function Featured() {
   );
 }
 
-function Project({ item }: Props) {
+interface ProjectProps {
+  item: {
+    url: string;
+    git_link: string;
+    img_link: string;
+    title: string;
+    summary: string;
+    key_feature: string[];
+    tags: { name: string; color: string }[];
+  };
+}
+
+function Project({ item }: ProjectProps) {
   return (
     <section id="showcase" className={`${styles.pbox} ${styles.card}`}>
-      <h2>
-        {item.url ? (
-          <a
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View Project Website"
-          >
-            {item.title}
-            <Image
-              src="/icon/chain-link.png"
-              alt=""
-              width={30}
-              height={30}
-              className={`${styles.pIurl}`}
-            />
-          </a>
-        ) : (
-          <>{item.title}</>
-        )}
-      </h2>
-      {item.gitLink && (
-        <a
-          href={item.gitLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.pLicon}`}
-          aria-label="View source code on GitHub"
-        >
-          <Image
-            src="/icon/git-commit.png"
-            alt=""
-            width={22}
-            height={21}
-            className={`${styles.pIgit}`}
-          />
-        </a>
-      )}
-      <p>{item.term}</p>
+      <h2>{makeLinkIfNeeded({ url: item.url, title: item.title })}</h2>
+
+      {item.git_link && <GitLink link={item.git_link} />}
+
+      <p>{item.summary}</p>
 
       <div>
         <details className={`${styles.pdetails} `}>
           <summary className={`${styles.pmore}`}> show more</summary>
           <Image
-            src={item.image}
+            src={item.img_link}
             alt={`Project ${item.title}`}
             width={1597}
             height={910}
             className={`${styles.pimage}`}
           />
           <ul>
-            {item.keyFeatures.map((feature) => (
-              <li key={feature}>
+            {item.key_feature.map((feature, index) => (
+              <li key={index}>
                 <p>{feature}</p>
               </li>
             ))}
@@ -172,5 +154,58 @@ function Project({ item }: Props) {
         ))}
       </div>
     </section>
+  );
+}
+
+function GitLink({ link }: { link: string }) {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${styles.pLicon}`}
+      aria-label="View source code on GitHub"
+    >
+      <Image
+        src="/icon/git-commit.png"
+        alt=""
+        width={22}
+        height={21}
+        className={`${styles.pIgit}`}
+      />
+    </a>
+  );
+}
+
+function makeLinkIfNeeded({
+  url,
+  title,
+}: {
+  url: string;
+  title: string;
+}): ReactNode {
+  if (!url) return title;
+
+  const props = {
+    href: url,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    'aria-label': 'View Project Website',
+  };
+  const Icon = (
+    <Image
+      src="/icon/chain-link.png"
+      alt=""
+      width={30}
+      height={30}
+      className={`${styles.pIurl}`}
+    />
+  );
+
+  return (
+    <a {...props}>
+      {' '}
+      {title} {Icon}
+    </a>
   );
 }

@@ -1,0 +1,7 @@
+{
+  "links": [
+    { "id": "about", "text": "TENTANG" },
+    { "id": "projects", "text": "PROJEK" },
+    { "id": "contact", "text": "KONTAK" }
+  ]
+}

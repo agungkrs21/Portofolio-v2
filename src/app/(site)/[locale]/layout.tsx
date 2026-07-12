@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import type { Viewport } from 'next';
 import { personSchema, websiteSchema } from '@/lib/seo/structured-data';
 import { siteConfig } from '@/config/site';
-import './globals.css';
+import '@/app/globals.css';
 
 //font
 import { montserrat, comfortana } from '@/lib/fonts/fonts';
@@ -110,22 +110,42 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+import { locales } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
+import { notFound } from 'next/navigation';
+import NavBar from '@/components/ui/layout/navbar/Navbar';
+import UtilityDock from '@/components/ui/layout/utility-dock/UtilityDock';
+import { ReactNode } from 'react';
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function SiteLayout({
   children,
+  params,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!locales.includes(locale as Locale)) {
+    notFound();
+  }
+
   return (
     <html
-      lang="en"
+      lang={locale}
       data-scroll-behavior="smooth"
       className={`${montserrat.variable} ${comfortana.variable}`}
     >
       <body>
-        <WebVitalsCollector />
+        <NavBar locale={locale as Locale} />
         {children}
-        <Footer />
-
+        <UtilityDock />
+        <Footer locale={locale}/>
+        <WebVitalsCollector />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

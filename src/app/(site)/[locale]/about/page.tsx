@@ -1,29 +1,42 @@
 import Image from 'next/image';
-import { lifeStory } from '@/data/profile';
 import styles from './Page.module.css';
-import { timelines } from '@/data/profile';
+import { timelinesAssets } from '@/data/about/timeline';
 import { parseText } from '@/utils/parseText';
+import { getDictionary } from '@/i18n/dictionary';
+import type { Locale } from '@/i18n/config';
+import type { Profile, Time_Lines } from '@/i18n/locales/en/about/type';
 
-export default function About() {
+export default async function About({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const dict = await getDictionary(locale as Locale);
   return (
     <section aria-labelledby="about-heding">
       <div className={`firstPage maxwidth ${styles.container}`}>
-        <AboutDetail />
-        <Timeline timelines={timelines} />
+        <AboutDetail dict={dict.pageAbout.profile.about} />
+        <Timeline dict={dict.pageAbout.profile.time_lines} locale={locale} />
       </div>
     </section>
   );
 }
 
-function AboutDetail() {
+interface AboutDetailProps {
+  dict: Profile;
+}
+
+function AboutDetail({ dict }: AboutDetailProps) {
   return (
     <div className={`${styles.about}`}>
       <div className={`${styles.catbg}`}></div>
       <div>
         <h1 id="about-heading" className={`${styles.title}`}>
-          About
+          {dict.title}
         </h1>
-        {lifeStory.map((story, i) => (
+        {dict.life_story.map((story, i) => (
           <p key={i}>{story}</p>
         ))}
       </div>
@@ -41,35 +54,35 @@ function AboutDetail() {
 }
 
 interface TimelineProps {
-  timelines: {
-    time: string;
-    title: string;
-    summary: string;
-    links: { id: string; text: string; href: string }[];
-    picture: string;
-  }[];
+  dict: Time_Lines;
+  locale: string;
 }
 
-function Timeline({ timelines }: TimelineProps) {
+function Timeline({ dict, locale }: TimelineProps) {
   return (
     <section
       aria-labelledby="timeline-heading"
       className={`${styles.timelineCt}`}
     >
       <h2 id="timeline-heading" className={`${styles.title}`}>
-        Timeline
+        {dict.title}
       </h2>
-      <p>A short timeline of how I became a Frontend Developer</p>
-
+      <p>{dict.sub_title}</p>
       <ol>
-        {timelines.map((tl) => (
+        {dict.lines.map((tl, index) => (
           <li key={tl.time} className={`${styles.timeline}`}>
             <div>
               <time dateTime={tl.time}>📅 {tl.time}</time>
               <h3>{tl.title}</h3>
             </div>
             <div>
-              <p>{parseText({ text: tl.summary, links: tl.links })}</p>
+              <p>
+                {parseText({
+                  text: tl.summary,
+                  links: timelinesAssets[index].links,
+                  locale: locale,
+                })}
+              </p>
             </div>
           </li>
         ))}
