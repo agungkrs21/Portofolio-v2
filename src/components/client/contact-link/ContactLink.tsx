@@ -21,10 +21,9 @@ export function ContactLink({ links, styles }: ContactLinkProps) {
         title: 'Text Copied!',
         detail: '47ungkrs@gmail.com',
       });
-    } catch (error) {
-      console.error(error);
+    } catch {
       toastBus.show({
-        type: 'error',
+        type: 'success',
         fading: false,
         title: 'Copy Email',
         detail: '47ungkrs@gmail.com',
