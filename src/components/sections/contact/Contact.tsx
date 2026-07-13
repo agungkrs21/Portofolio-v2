@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './Contact.module.css';
-import { ContactLink } from '@/components/client/contacts/ContactLink';
 import type { IdText } from '@/i18n/locales/en/site/types';
+import { ContactLink } from '@/components/client/contact-link/ContactLink';
 
 interface ContactProps {
   dict: { summary: string; links: IdText };
@@ -23,7 +23,7 @@ export default function Contact({ dict }: ContactProps) {
           />
           <p>{dict.summary}</p>
         </div>
-        {/* link contack */}
+
         <ContactLink links={dict.links} styles={styles.link} />
       </div>
     </section>

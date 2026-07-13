@@ -1,6 +1,7 @@
 import { locales } from '@/i18n/config';
 import type { Locale } from '@/i18n/config';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'nextjs-toploader/app';
 
 export function useLocaleSwitcher() {
   const pathname = usePathname();

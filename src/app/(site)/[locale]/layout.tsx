@@ -114,8 +114,10 @@ import { locales } from '@/i18n/config';
 import type { Locale } from '@/i18n/config';
 import { notFound } from 'next/navigation';
 import NavBar from '@/components/ui/layout/navbar/Navbar';
+import NextTopLoader from 'nextjs-toploader';
 import UtilityDock from '@/components/ui/layout/utility-dock/UtilityDock';
 import { ReactNode } from 'react';
+import ToastContainer from '@/components/collectors/ToastContainer';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -141,6 +143,14 @@ export default async function SiteLayout({
       className={`${montserrat.variable} ${comfortana.variable}`}
     >
       <body>
+        <NextTopLoader
+          color="#f0f0f0"
+          showSpinner={false}
+          shadow={false}
+          initialPosition={0.3}
+          easing="cubic-bezier(0.22, 1, 0.36, 1)"
+        />
+        <ToastContainer />
         <NavBar locale={locale as Locale} />
         {children}
         <UtilityDock />
