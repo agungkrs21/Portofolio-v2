@@ -178,3 +178,71 @@ body.custom-cursor button {
     transform: translateX(400%);
   }
 }
+
+/* toast style */
+#toast {
+  position: fixed;
+  z-index: 9999;
+  right: -320px;
+  top: 6.6rem;
+}
+
+#toast li {
+  position: relative;
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-130%);
+  animation: slide 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#toast > li > div {
+  padding: 0.7rem 1rem;
+  border-radius: 16px;
+}
+.t_fading {
+  animation: fadeIn 15s ease;
+}
+
+#toast > li button {
+  position: absolute;
+  right: 28px;
+  top: -14px;
+  padding: 0.3rem;
+  background: var(--background);
+  font-size: var(--font-size-m);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+#toast > li button:hover {
+  opacity: 1;
+}
+
+.success > div {
+  background: var(--white-200);
+  color: var(--background);
+}
+.error > div {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
