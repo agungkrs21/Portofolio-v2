@@ -18,9 +18,7 @@ const LOCALES = {
 };
 
 export default function SettingsPanel() {
-  const { language, cursor, animation, crt_effect } = useSiteSettings(
-    (s) => s.settings,
-  );
+  const { language, cursor } = useSiteSettings((s) => s.settings);
   const locale = LOCALES[language ?? 'en'];
 
   return (

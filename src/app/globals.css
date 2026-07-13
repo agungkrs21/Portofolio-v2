@@ -142,3 +142,39 @@ body.custom-cursor button {
 .firstPage {
   padding-top: 9rem;
 }
+
+#nprogress .bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* height: 100px; */
+  width: 30%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-white),
+    transparent
+  );
+
+  animation: shimmer 1.8s linear infinite;
+}
+
+@keyframes gradientMove {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 300%;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-200%);
+  }
+
+  to {
+    transform: translateX(400%);
+  }
+}
