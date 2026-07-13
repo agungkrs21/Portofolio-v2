@@ -37,3 +37,13 @@
   color: var(--color-primary);
   font-weight: 700;
 }
+
+.supported {
+  color: var(--green);
+  background: var(--green-bg);
+}
+
+.not_supported {
+  color: var(--red);
+  background: var(--red-bg);
+}

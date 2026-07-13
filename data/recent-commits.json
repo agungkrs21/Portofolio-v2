@@ -1,47 +1,47 @@
 [
   {
     "repo": "Portofolio-v2",
-    "message": "add project card css scroll driven animation",
-    "date": "2026-07-06T04:34:47Z",
-    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/baacbe5fd2b0d0a5bb2c34b274b2b09506e94a7b",
-    "additions": 127,
+    "message": "feat: add cursors switcher in terminal",
+    "date": "2026-07-13T00:20:55Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/bde1f055c31732c019b289361de5a2bab10a5644",
+    "additions": 45,
+    "deletions": 3,
+    "filesChanged": 9
+  },
+  {
+    "repo": "Portofolio-v2",
+    "message": "feat: add language switcher in terminal",
+    "date": "2026-07-12T22:49:13Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/45e839b4799a68c3143e67d67cf737ff112bde14",
+    "additions": 237,
+    "deletions": 25,
+    "filesChanged": 14
+  },
+  {
+    "repo": "Portofolio-v2",
+    "message": "Merge pull request #2 from agungkrs21/feature/i18n\n\nFeature/i18n",
+    "date": "2026-07-12T18:16:32Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/de7af682865c33cbcd542a53413d655368a626cf",
+    "additions": 1447,
+    "deletions": 626,
+    "filesChanged": 58
+  },
+  {
+    "repo": "Portofolio-v2",
+    "message": "feat: add translation to projects section",
+    "date": "2026-07-12T18:15:44Z",
+    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/95a9a6c74ad75076067729b3ca02e806ec758a73",
+    "additions": 407,
     "deletions": 81,
-    "filesChanged": 5
+    "filesChanged": 8
   },
   {
-    "repo": "Portofolio-v2",
-    "message": "add toast notification",
-    "date": "2026-07-05T15:59:12Z",
-    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/8264ed8e36e5673b6e1403794d6d89cfc1702960",
-    "additions": 462,
-    "deletions": 2,
-    "filesChanged": 22
-  },
-  {
-    "repo": "Portofolio-v2",
-    "message": "add projects section",
-    "date": "2026-07-05T02:40:13Z",
-    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/0e9a7af1f5d8242f5aeccaeb8217fb30514b48b8",
-    "additions": 381,
-    "deletions": 18,
-    "filesChanged": 10
-  },
-  {
-    "repo": "Portofolio-v2",
-    "message": "add experience section",
-    "date": "2026-07-04T14:02:41Z",
-    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/0041c92c743ebec1664ee996ff1f0d90570f4ca9",
-    "additions": 259,
-    "deletions": 6,
-    "filesChanged": 32
-  },
-  {
-    "repo": "Portofolio-v2",
-    "message": "add profile section",
-    "date": "2026-07-03T22:48:35Z",
-    "url": "https://github.com/agungkrs21/Portofolio-v2/commit/8cd6a89f631b4dc37d405018879bc78e1833cc82",
-    "additions": 301,
-    "deletions": 22,
-    "filesChanged": 16
+    "repo": "portofolio-game",
+    "message": "feat: add readme instalation guide",
+    "date": "2026-07-11T12:09:59Z",
+    "url": "https://github.com/agungkrs21/portofolio-game/commit/71d06950b595485ae0e94559e9b9da0debdbf517",
+    "additions": 130,
+    "deletions": 0,
+    "filesChanged": 2
   }
 ]

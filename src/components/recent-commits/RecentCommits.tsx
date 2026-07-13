@@ -1,6 +1,6 @@
 import styles from './RecentCommits.module.css';
 import { RecentCommit } from '@/lib/github/types';
-import { getRecentCommits } from '@/lib/github/read-recent-commits';
+import { readRecentCommits } from '@/lib/github/read-recent-commits';
 import { RecentCommitsError } from '@/components/recent-commits/RecentCommitsError';
 import { formatDate } from '@/utils/format-date';
 
@@ -8,7 +8,7 @@ export default async function RecentCommits() {
   // Avoid linter warning
   let commits = null;
   try {
-    commits = await getRecentCommits();
+    commits = await readRecentCommits();
   } catch (error) {
     console.log(error);
     return <RecentCommitsError error={error as Error} />;
