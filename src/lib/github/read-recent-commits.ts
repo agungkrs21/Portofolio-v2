@@ -2,7 +2,7 @@ import { RecentCommit } from '@/lib/github/types';
 import { readFile } from 'fs/promises';
 import path from 'path';
 
-export async function getRecentCommits(): Promise<RecentCommit[]> {
+export async function readRecentCommits(): Promise<RecentCommit[]> {
   try {
     const filePath = path.join(process.cwd(), 'data', 'recent-commits.json');
 
