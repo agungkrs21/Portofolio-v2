@@ -24,6 +24,8 @@ export function LanguageSwitcher({ state }: LanguageSwitcherProps) {
     debouncedCallback(value);
   }
 
+  if (state === undefined) return null;
+
   return (
     <div className={styles.button_ct}>
       <button onClick={() => onChangeLanguage('language', 'en')}>en</button>

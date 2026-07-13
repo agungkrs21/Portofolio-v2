@@ -100,6 +100,15 @@ body {
   font-family: var(--font-confortana);
 }
 
+.custom-cursor {
+  cursor: url('/cursor.cur'), auto;
+}
+
+body.custom-cursor a,
+body.custom-cursor button {
+  cursor: url('/cursor_active.cur'), pointer !important;
+}
+
 @theme {
   --font-heading: var(--font-monteserrat);
   --font-body: var(--font-confortana);

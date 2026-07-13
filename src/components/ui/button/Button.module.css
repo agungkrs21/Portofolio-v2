@@ -1,6 +1,6 @@
 .btn {
   font-size: var(--font-size-m);
-  cursor: pointer;
+  /* cursor: url('/cursor_active.cur'), pointer; */
   display: inline-block;
 }
 

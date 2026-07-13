@@ -1,7 +1,8 @@
 'use client';
 import { useSiteSettings } from '@/stores/site-settings.store';
 import styles from './SettingsPanel.module.css';
-import { LanguageSwitcher } from '@/components/client/terminal/panels/settings/LanguaSwitter';
+import { LanguageSwitcher } from '@/components/client/terminal/panels/settings/LanguaSwitcher';
+import { CursorSwitcher } from '@/components/client/terminal/panels/settings/CursorSwitcher';
 // probably in the futre if i complete my panels i will make dedicated locales
 const LOCALES = {
   en: {
@@ -32,6 +33,7 @@ export default function SettingsPanel() {
         </div>
         <div>
           <p>{locale.category[1]}</p>
+          <CursorSwitcher state={cursor} />
         </div>
       </section>
 

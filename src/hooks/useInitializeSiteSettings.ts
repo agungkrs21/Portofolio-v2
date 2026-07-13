@@ -11,7 +11,7 @@ export function useInitializeSiteSettings({ locale }: { locale: Locale }) {
     // "pirete software" style 🤣
     initialize({
       language: locale,
-      cursor: 1,
+      cursor: 0,
       animation: 1,
       crt_effect: 1,
     });
