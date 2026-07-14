@@ -9,13 +9,13 @@
       { "id": "location", "text": "Makassar, Indonesia" },
 
       { "id": "degree", "text": "B.S. in Computer Science" },
-      { "id": "status", "text": "Avaible for work" },
+      { "id": "status", "text": "Available for work" },
       { "id": "favorit_book", "text": "Atomic Habits" }
     ],
     "btn_text": "More About me"
   },
   "experience": {
-    "title": "I've been building web applications for over  one years now, and  I'm always eager to learn more.",
+    "title": "I've been building web applications for over one year now, and I'm always eager to learn more.",
     "sub_heading": "Some technologies i've worked with:",
     "categories": [
       { "id": "all", "text": "All" },
