@@ -20,7 +20,7 @@ export default function About({ locale, dict }: AboutProps) {
             <span>{dict.name}</span>, {dict.summary}
           </p>
 
-          <Link href={`/${locale}/about`}>
+          <Link href={`/${locale}/about`} prefetch={false}>
             <p className={`${styles.abMore}`}>{dict.btn_text}</p>
           </Link>
 
@@ -30,13 +30,12 @@ export default function About({ locale, dict }: AboutProps) {
         {/* profile pic box */}
         <div className={`${styles.box}`}>
           <div>
-            <img
+            <Image
               src="/images/me-pp.png"
               alt="Pixel Art Sprite"
               width={520}
               height={520}
-              style={{ imageRendering: 'pixelated' }}
-              className={`${styles.imgBig}`}
+              className={`[image-rendering:pixelated] ${styles.imgBig}`}
             />
           </div>
           <div className={`${styles.wave}`}></div>
