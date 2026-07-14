@@ -4,6 +4,9 @@ import { personSchema, websiteSchema } from '@/lib/seo/structured-data';
 import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
 
+// vercel speed insight
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 //font
 import { montserrat, comfortana } from '@/lib/fonts/fonts';
 // layout
@@ -166,6 +169,7 @@ export default async function SiteLayout({
         <UtilityDock />
         <Footer locale={locale} />
         <WebVitalsCollector locale={locale as Locale} />
+        <SpeedInsights />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

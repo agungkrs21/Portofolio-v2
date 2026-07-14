@@ -26,12 +26,7 @@ function CommitList({ commits }: { commits: RecentCommit[] }) {
         <ol>
           {commits.map((commit, i) => (
             <li key={`${i}-${commit.date}`}>
-              <a
-                href={commit.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View commit on GitHub"
-              >
+              <a href={commit.url} target="_blank" rel="noopener noreferrer">
                 <article className={`${styles.commit}`}>
                   <h3>📝 {commit.message}</h3>
                   <p>repo : {commit.repo}</p>
