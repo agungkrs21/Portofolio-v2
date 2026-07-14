@@ -46,9 +46,6 @@ export const metadata: Metadata = {
     'Indonesia',
     'UI Engineer',
   ],
-  alternates: {
-    canonical: '/',
-  },
 
   robots: {
     index: true,
@@ -60,23 +57,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
       'max-video-preview': -1,
     },
-  },
-
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: siteConfig.url,
-    siteName: `${siteConfig.name} Portfolio`,
-    title: `${siteConfig.name} Portfolio`,
-    description: siteConfig.description,
-    images: [
-      {
-        url: `${siteConfig.url}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} Portfolio`,
-      },
-    ],
   },
 
   twitter: {
@@ -100,6 +80,39 @@ export const metadata: Metadata = {
 
   category: 'Technology',
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    alternates: {
+      canonical: `${siteConfig.url}/${locale}`,
+      languages: {
+        en: `${siteConfig.url}/en`,
+        id: `${siteConfig.url}/id`,
+      },
+    },
+    openGraph: {
+      type: 'website',
+      locale: locale === 'id' ? 'id' : 'en_use',
+      url: `${siteConfig.url}/${locale}`,
+      siteName: `${siteConfig.name} Portfolio`,
+      title: `${siteConfig.name} Portfolio`,
+      description: siteConfig.description,
+      images: [
+        {
+          url: `${siteConfig.url}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} Portfolio`,
+        },
+      ],
+    },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: [

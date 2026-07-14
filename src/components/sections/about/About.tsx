@@ -45,6 +45,7 @@ export default function About({ locale, dict }: AboutProps) {
               width={520}
               height={520}
               className={`[image-rendering:pixelated] ${styles.imgBig}`}
+              priority
             />
           </div>
           <div className={`${styles.wave}`}></div>
@@ -78,6 +79,7 @@ function Detail({ path, detail }: DetailProps) {
         width={21}
         height={21}
         className="[image-rendering:pixelated] w-auto h-[20px]"
+        priority
       />
       <span>{detail}</span>
     </div>
