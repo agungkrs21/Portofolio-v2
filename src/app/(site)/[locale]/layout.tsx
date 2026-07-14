@@ -23,6 +23,10 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(siteConfig.url),
 
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+    },
+
     title: {
       default: siteConfig.name,
       template: `%s | ${siteConfig.name}`,
