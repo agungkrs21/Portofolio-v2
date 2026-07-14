@@ -42,6 +42,7 @@ export function LinkNavigation({ locale, links }: LinkNavigationProps) {
           <Button
             href={`/resume/Resume-Agung-Kurniawan-2026-${locale}.pdf`}
             variant="secondary"
+            type="normal"
           >
             RESUME
           </Button>
