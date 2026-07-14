@@ -92,8 +92,8 @@
 .imgBig {
   position: relative;
   image-rendering: pixelated;
-  width: 360px;
-  height: auto;
+  width: auto;
+  height: 300px;
   z-index: 10;
 }
 
