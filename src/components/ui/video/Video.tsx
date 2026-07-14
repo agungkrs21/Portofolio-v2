@@ -9,6 +9,7 @@ export function Video({ source }: { source: string }) {
       playsInline
       preload="auto"
       className="rounded-2xl w-full h-full"
+      aria-hidden="true"
     />
   );
 }
