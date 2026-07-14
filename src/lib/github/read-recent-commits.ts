@@ -1,38 +1,47 @@
-import { RecentCommit } from '@/lib/github/types';
+import type { RecentCommit } from '@/lib/github/types';
 import { readFile } from 'fs/promises';
 import path from 'path';
 
-// TODO useCache, and refractor code
+// use Redis if needed
 export async function readRecentCommits(): Promise<RecentCommit[]> {
   try {
-    return await read();
+    return await getNewCommitData();
   } catch (error) {
-    throw new Error('Failed to read recent commits.', {
-      cause: error,
-    });
+    console.error(error);
+    return readRecentCommitFromBackUp();
   }
 }
 
-async function read() {
-  const filePath = path.join(process.cwd(), 'data', 'recent-commits.json');
-
-  const json = await readFile(filePath, 'utf8');
-
-  return JSON.parse(json) as RecentCommit[];
+async function readRecentCommitFromBackUp() {
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'recent-commits.json');
+    const json = await readFile(filePath, 'utf8');
+    return JSON.parse(json) as RecentCommit[];
+  } catch (error) {
+    throw new Error('Failed to read commits from backup', { cause: error });
+  }
 }
 
-async function get() {
+let pendingRequest: Promise<RecentCommit[]> | null = null;
+
+function getNewCommitData() {
+  // pevent unnecessary API request
+  if (pendingRequest) return pendingRequest;
+
   const url = process.env.RECENT_COMMIT_URL;
 
   if (!url) {
-    throw new Error('RECENT_COMMIT_URL is not configured.');
+    return Promise.reject(new Error('RECENT_COMMIT_URL is not configured'));
   }
 
-  const res = await fetch(url);
+  pendingRequest = fetch(url)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error('Failed to get recent comiits');
+      }
+      return res.json() as Promise<RecentCommit[]>;
+    })
+    .finally(() => (pendingRequest = null));
 
-  if (!res.ok) {
-    throw new Error('Failed to get recent commits');
-  }
-  const data = await res.json();
-  return data as RecentCommit[];
+  return pendingRequest;
 }

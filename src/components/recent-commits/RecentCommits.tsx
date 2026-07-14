@@ -10,7 +10,7 @@ export default async function RecentCommits() {
   try {
     commits = await readRecentCommits();
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return <RecentCommitsError error={error as Error} />;
   }
   if (commits) {
