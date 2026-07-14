@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${siteConfig.url}/en/about`,
+      url: `${siteConfig.url}/id/about`,
       lastModified: new Date(),
     },
   ];
