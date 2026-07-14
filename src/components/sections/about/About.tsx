@@ -4,7 +4,6 @@ import styles from './About.module.css';
 import { profileAssets } from '@/data/site/profile';
 import type { Profile } from '@/i18n/locales/en/site/types';
 import { DialogBox } from '@/components/client/dialog-box/DialogBox';
-import { useRouter } from 'next/router';
 
 interface AboutProps {
   locale: string;
@@ -12,8 +11,6 @@ interface AboutProps {
 }
 
 export default function About({ locale, dict }: AboutProps) {
-  const router = useRouter();
-
   return (
     <section className={`${styles.about}`} id="about">
       <div className={`maxwidth firstPage ${styles.wrapper}`}>
@@ -23,13 +20,7 @@ export default function About({ locale, dict }: AboutProps) {
             <span>{dict.name}</span>, {dict.summary}
           </p>
 
-          <Link
-            href={`/${locale}/about`}
-            prefetch={false}
-            onMouseEnter={() => router.prefetch('/about')}
-            onFocus={() => router.prefetch('/about')}
-            onTouchStart={() => router.prefetch('/about')}
-          >
+          <Link href={`/${locale}/about`} prefetch={false}>
             <p className={`${styles.abMore}`}>{dict.btn_text}</p>
           </Link>
 

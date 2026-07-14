@@ -11,76 +11,6 @@ import Footer from '@/components/ui/layout/footer/Footer';
 import { WebVitalsCollector } from '@/components/collectors';
 
 // SEO
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-
-  title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
-  },
-
-  description: siteConfig.description,
-
-  applicationName: `${siteConfig.name} Portfolio`,
-
-  authors: [
-    {
-      name: 'Agung Kurniawan',
-      url: 'https://github.com/agungkrs21',
-    },
-  ],
-
-  creator: siteConfig.name,
-  publisher: siteConfig.name,
-
-  keywords: [
-    'Frontend Developer',
-    'React',
-    'Next.js',
-    'TypeScript',
-    'JavaScript',
-    'Node.js',
-    'Portfolio',
-    'Tailwind CSS',
-    'Web Developer',
-    'Indonesia',
-    'UI Engineer',
-  ],
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
-  },
-
-  twitter: {
-    card: 'summary_large_image',
-    creator: '@agungkrs21',
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [`${siteConfig.url}/og-image.png`],
-  },
-
-  appleWebApp: {
-    capable: true,
-    title: siteConfig.name,
-    statusBarStyle: 'black-translucent',
-  },
-
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-
-  category: 'Technology',
-};
-
 export async function generateMetadata({
   params,
 }: {
@@ -88,6 +18,73 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
+    metadataBase: new URL(siteConfig.url),
+
+    title: {
+      default: siteConfig.name,
+      template: `%s | ${siteConfig.name}`,
+    },
+
+    description: siteConfig.description,
+
+    applicationName: `${siteConfig.name} Portfolio`,
+
+    authors: [
+      {
+        name: 'Agung Kurniawan',
+        url: 'https://github.com/agungkrs21',
+      },
+    ],
+
+    creator: siteConfig.name,
+    publisher: siteConfig.name,
+
+    keywords: [
+      'Frontend Developer',
+      'React',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'Node.js',
+      'Portfolio',
+      'Tailwind CSS',
+      'Web Developer',
+      'Indonesia',
+      'UI Engineer',
+    ],
+
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
+
+    twitter: {
+      card: 'summary_large_image',
+      creator: '@agungkrs21',
+      title: siteConfig.name,
+      description: siteConfig.description,
+      images: [`${siteConfig.url}/og-image.png`],
+    },
+
+    appleWebApp: {
+      capable: true,
+      title: siteConfig.name,
+      statusBarStyle: 'black-translucent',
+    },
+
+    icons: {
+      icon: '/favicon.ico',
+      apple: '/apple-touch-icon.png',
+    },
+
+    category: 'Technology',
     alternates: {
       canonical: `${siteConfig.url}/${locale}`,
       languages: {
