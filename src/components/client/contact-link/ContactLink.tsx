@@ -17,7 +17,7 @@ export function ContactLink({ links, styles }: ContactLinkProps) {
 
       toastBus.show({
         type: 'success',
-        fading: true,
+        fading: false,
         title: 'Text Copied!',
         detail: '47ungkrs@gmail.com',
       });
