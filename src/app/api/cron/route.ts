@@ -26,6 +26,7 @@ export async function GET(request: NextRequest) {
       addRandomSuffix: false,
       contentType: 'application/json',
       allowOverwrite: true,
+      cacheControlMaxAge: 86400, // Caches for 24 hours in the CDN & browser
     });
 
     return NextResponse.json({
