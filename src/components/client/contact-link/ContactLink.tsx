@@ -13,20 +13,20 @@ interface ContactLinkProps {
 export function ContactLink({ links, styles }: ContactLinkProps) {
   async function handleClick() {
     try {
-      await navigator.clipboard.writeText('47ungkrs@gmai.com');
+      await navigator.clipboard.writeText('agungkrs.dev@gmail.com');
 
       toastBus.show({
         type: 'success',
         fading: false,
         title: 'Text Copied!',
-        detail: '47ungkrs@gmail.com',
+        detail: 'agungkrs.dev@gmail.com',
       });
     } catch {
       toastBus.show({
         type: 'success',
         fading: false,
         title: 'Copy Email',
-        detail: '47ungkrs@gmail.com',
+        detail: 'agungkrs.dev@gmail.com',
       });
     }
   }
