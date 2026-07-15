@@ -75,7 +75,7 @@ export const projectsAssets = {
       img_link: '/images/projects/android-ptyusran.png',
       tags: [
         { name: 'expo', color: 'gray' },
-        { name: 'openAi', color: 'green' },
+        { name: 'openAI', color: 'green' },
         { name: 'rag', color: 'cyan' },
         { name: 'nlpm', color: 'purple' },
         { name: 'chromaDb', color: 'pink' },

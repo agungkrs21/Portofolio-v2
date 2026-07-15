@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { put } from '@vercel/blob';
-
 import { getRecentCommits } from '@/lib/github/github';
+
+export const maxDuration = 60;
 
 export async function GET(request: NextRequest) {
   if (!process.env.CRON_SECRET) {

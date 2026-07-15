@@ -16,7 +16,7 @@
   },
   "experience": {
     "title": "I've been building web applications for over one year now, and I'm always eager to learn more.",
-    "sub_heading": "Some technologies i've worked with:",
+    "sub_heading": "Some technologies I've worked with:",
     "categories": [
       { "id": "all", "text": "All" },
       { "id": "i_front-end", "text": "Front-end" },
@@ -28,7 +28,7 @@
       {
         "id": "i_front-end",
         "title": "Front-end",
-        "text": "Turning ideas into interactive and well-structured web applications,that deliver seamless user experiences."
+        "text": "Turning ideas into interactive and well-structured web applications, that deliver seamless user experiences."
       },
       {
         "id": "i_backend",
