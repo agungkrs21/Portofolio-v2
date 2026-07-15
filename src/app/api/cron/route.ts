@@ -25,6 +25,7 @@ export async function GET(request: NextRequest) {
       access: 'public',
       addRandomSuffix: false,
       contentType: 'application/json',
+      allowOverwrite: true,
     });
 
     return NextResponse.json({
